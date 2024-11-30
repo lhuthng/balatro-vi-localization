@@ -1,0 +1,8 @@
+cd ../Balatro
+zip -9 -r Balatro.love .
+cd ..
+echo "Remove Balatro.love"
+rm Balatro.love
+echo "Move Balatro.love"
+mv Balatro/Balatro.love Balatro.love
+cd tools

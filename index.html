@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .objectContainer {
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+        }
+        .textContainer {
+            margin: 5px;
+        }
+        
+        textarea {
+            width: calc(100% - 10px);
+            height: auto;
+        }
+        p {
+            margin: 0;
+        }
+        .styledButton {
+            border: none;
+        }
+        .v-box {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            align-items: baseline;
+        }
+    </style>
+</head>
+<body>
+    <h2>Upload the JSON file</h2>
+    <input type="file" id="fileInput" class="styledButton" accept="application/json" />
+    <button id="saveButton1" class="styledButton" onClick="save()" disabled>Save</button>
+    <button id="saveButton2" class="styledButton" onClick="saveAsLua()" disabled>Save as Lua file</button>
+    <div id="mainContainer"></div>
+    <script src="script.js"></script>
+</body>
+</html>
