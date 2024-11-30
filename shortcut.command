@@ -1,3 +1,4 @@
+mv lang* ../Balatro/localization/vi.lua
 cd ../Balatro
 zip -9 -r Balatro.love .
 cd ..

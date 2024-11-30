@@ -17,12 +17,16 @@
         textarea {
             width: calc(100% - 10px);
             height: auto;
+            resize: none;
         }
         p {
             margin: 0;
         }
         .styledButton {
             border: none;
+        }
+        .wait {
+            background: pink;
         }
         .v-box {
             display: flex;
@@ -37,6 +41,7 @@
     <input type="file" id="fileInput" class="styledButton" accept="application/json" />
     <button id="saveButton1" class="styledButton" onClick="save()" disabled>Save</button>
     <button id="saveButton2" class="styledButton" onClick="saveAsLua()" disabled>Save as Lua file</button>
+    <button id="updateAllButton" class="styledButton" onclick="updateAll()" disabled>Update ALL!</button>
     <div id="mainContainer"></div>
     <script src="script.js"></script>
 </body>

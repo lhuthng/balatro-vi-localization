@@ -1,4 +1,5 @@
-local source = dofile("../Balatro/localization/vi.lua")
+-- local source = dofile("../../Balatro/localization/vi.lua")
+local source = dofile("../lang.lua")
 local output = io.open("output.json", "w")
 local function to_json(obj)
     local function serialize(val)

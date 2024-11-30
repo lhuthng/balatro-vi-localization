@@ -1,4 +1,6 @@
 const file_input = document.getElementById('fileInput');
+const update_all_button = document.getElementById('updateAllButton');
+let buttons = [];
 
 function show(object, container, path) {
     if (typeof object === "string") {
@@ -6,9 +8,14 @@ function show(object, container, path) {
         const textarea = document.createElement('textarea');
         const update_button = document.createElement('button');
         textarea.value = object;
+        textarea.addEventListener("change", e => {
+            update_all_button.classList.add("wait");
+            update_button.classList.add("wait");
+        });
         update_button.innerHTML = "update";
         update_button.classList.add("styledButton");
-        update_button.addEventListener('click', update_data(path, textarea));
+        update_button.addEventListener('click', update_data(update_button, path, textarea));
+        buttons.push(update_button);
         sub_container.classList.add("v-box");
         sub_container.appendChild(textarea);
         sub_container.appendChild(update_button);
@@ -22,7 +29,7 @@ function show(object, container, path) {
     }
 }
 
-function show_object(object, container, path) {
+function show_object(object, container, path="") {
     if (Array.isArray(object)) {
         object.forEach((item, index) => {
             const sub_container = document.createElement('div');
@@ -37,22 +44,21 @@ function show_object(object, container, path) {
                 const sub_container = document.createElement('div');
                 container.appendChild(sub_container);
                 container.classList.add("objectContainer")
-                sub_container.innerHTML = `<p>${key}: </p>`;
+                sub_container.innerHTML = `<p>${key}: (${path})</p>`;
                 show(object[key], sub_container, `${path}.${key}`);
             }            
         });
     }
 }
 
-function update_data(path, textarea) {
+function update_data(button, path, textarea) {
     return () => {
-        console.log(path);
         if (data) {
             let current = data;
             const keys = path.split('.');
             for (let i = 1; i < keys.length - 1; i++) current = current[keys[i]];
-            console.log(current[keys[keys.length - 1]]);
             current[keys[keys.length - 1]] = textarea.value;
+            button.classList.remove("wait");
         }
     };
 }
@@ -102,6 +108,11 @@ function saveAsLua() {
     a.click();
 }
 
+function updateAll() {
+    buttons.forEach(button => button.click());
+    update_all_button.classList.remove("wait");
+}
+
 file_input.addEventListener('change', event => {
     const file = event.target.files[0];
 
@@ -112,11 +123,15 @@ file_input.addEventListener('change', event => {
             const reader = new FileReader();
             reader.onload = e => {
                 try {
+                    buttons = [];
+                    const main_container = document.getElementById("mainContainer");
+                    main_container.innerHTML = '';
                     data = JSON.parse(e.target.result);
                     console.log("Parsed.");
-                    show(data, document.getElementById("mainContainer"));
+                    show(data, main_container);
                     document.getElementById("saveButton1").disabled = false;
                     document.getElementById("saveButton2").disabled = false;
+                    update_all_button.disabled = false;
                 } catch (err) {
                     alert("Parsing error!");
                 }
