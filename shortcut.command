@@ -5,4 +5,4 @@ echo "Remove Balatro.love"
 rm Balatro.love
 echo "Move Balatro.love"
 mv Balatro/Balatro.love Balatro.love
-cd tools
+cd balatro-vi-localization
