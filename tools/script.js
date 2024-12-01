@@ -4,23 +4,22 @@ let buttons = [];
 
 function show(object, container, path) {
     if (typeof object === "string") {
-        const sub_container = document.createElement('div');
-        const textarea = document.createElement('textarea');
+        const textinput = document.createElement('input');
         const update_button = document.createElement('button');
-        textarea.value = object;
-        textarea.addEventListener("change", e => {
+        textinput.type = "text";
+        textinput.value = object;
+        textinput.addEventListener("input", e => {
             update_all_button.classList.add("wait");
             update_button.classList.add("wait");
         });
         update_button.innerHTML = "update";
         update_button.classList.add("styledButton");
-        update_button.addEventListener('click', update_data(update_button, path, textarea));
+        update_button.addEventListener('click', update_data(update_button, path, textinput));
         buttons.push(update_button);
-        sub_container.classList.add("v-box");
-        sub_container.appendChild(textarea);
-        sub_container.appendChild(update_button);
-        sub_container.classList.add("textContainer")
-        container.appendChild(sub_container);
+        container.classList.add("v-box");
+        container.appendChild(textinput);
+        container.appendChild(update_button);
+        container.classList.add("textContainer");
     }
     else if (typeof object === "object") {
         const sub_container = document.createElement("div");
@@ -31,12 +30,32 @@ function show(object, container, path) {
 
 function show_object(object, container, path="") {
     if (Array.isArray(object)) {
-        object.forEach((item, index) => {
-            const sub_container = document.createElement('div');
-            container.appendChild(sub_container);
-            container.classList.add("objectContainer")
-            show(item, sub_container, `${path}.${index}`);
-        });
+        const sub_container = document.createElement('div');
+        container.appendChild(sub_container);
+        container.classList.add("objectContainer")
+        if (object.every(child => typeof child === "string")) {
+            const textarea = document.createElement("textarea");
+            const update_button = document.createElement('button');
+            textarea.value = object.join("\n");
+            textarea.rows = object.length;
+            update_button.innerHTML = "update";
+            update_button.classList.add("styledButton");
+            update_button.addEventListener('click', update_data(update_button, path, textarea, textarea.rows));
+            textarea.addEventListener("input", e => {
+                update_all_button.classList.add("wait");
+                update_button.classList.add("wait");
+                const lines = textarea.value.split('\n')
+                if (lines.length > textarea.rows) textarea.value = lines.slice(0, textarea.rows).join('\n');
+            });
+            sub_container.classList.add("v-box-2");
+            sub_container.appendChild(textarea);
+            sub_container.appendChild(update_button);
+        }
+        else {
+            object.forEach((item, index) => {
+                show(item, sub_container, `${path}.${index}`);
+            });
+        }
     }
     else {
         Object.keys(object).sort().forEach(key => {
@@ -44,21 +63,32 @@ function show_object(object, container, path="") {
                 const sub_container = document.createElement('div');
                 container.appendChild(sub_container);
                 container.classList.add("objectContainer")
-                sub_container.innerHTML = `<p>${key}: (${path})</p>`;
+                sub_container.innerHTML = `<p>${key}: </p>`;
                 show(object[key], sub_container, `${path}.${key}`);
             }            
         });
     }
 }
 
-function update_data(button, path, textarea) {
+function update_data(button, path, input, limited) {
     return () => {
         if (data) {
             let current = data;
             const keys = path.split('.');
             for (let i = 1; i < keys.length - 1; i++) current = current[keys[i]];
-            current[keys[keys.length - 1]] = textarea.value;
-            button.classList.remove("wait");
+            if (limited === undefined) {
+                current[keys[keys.length - 1]] = input.value;
+                button.classList.remove("wait");
+            }
+            else {
+                current = current[keys[keys.length - 1]];
+                let lines = input.value.split('\n').slice(0, limited);
+                for (let i = 0; i < limited; i++) {
+                    if (lines[i] === undefined) current[i] = "";
+                    else current[i] = lines[i];
+                }
+                button.classList.remove("wait");
+            }
         }
     };
 }
