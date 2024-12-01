@@ -41,6 +41,7 @@ function show_object(object, container, path="") {
             update_button.innerHTML = "update";
             update_button.classList.add("styledButton");
             update_button.addEventListener('click', update_data(update_button, path, textarea, textarea.rows));
+            buttons.push(update_button);
             textarea.addEventListener("input", e => {
                 update_all_button.classList.add("wait");
                 update_button.classList.add("wait");
