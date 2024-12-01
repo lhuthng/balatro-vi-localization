@@ -1,0 +1,3 @@
+mv lang*lua current/vi.lua
+mv lang*json current/vi.json
+cp current/vi.lua ../Balatro/localization/vi.lua
