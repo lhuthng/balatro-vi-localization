@@ -396,7 +396,7 @@ return {
 				text={
 					"Nhận {C:money}#1#k{} nếu",
 					"lá bài trên tay còn được giữ",
-					"vào cuối trận",
+					"vào cuối vòng",
 				},
 			},
 			m_lucky={
@@ -674,11 +674,11 @@ return {
 				},
 			},
 			j_cavendish={
-				name="Chuối Tiêu Tùng",
+				name="Chuối Tiêu Chính Hiệu",
 				text={
-					"Nhận {X:mult,C:white} X#1# {} hệ số nhân ",
-					"nhưng có {C:green}#2# trong #3#{} khả năng",
-					"chuối thúi và bị huỷ",
+					"Nhận {X:mult,C:white} X#1# {} hệ số nhân nhưng ",
+					"có {C:green}#2# trong #3#{} khả năng ",
+					"bóc chuối thúi và bị huỷ",
 					"vào cuối vòng",
 				},
 			},
@@ -776,7 +776,7 @@ return {
 				name="Kiên Nhẫn",
 				text={
 					"Nhận {C:money}#1#k{} mỗi {C:attention}lượt bỏ{} vào",
-					"cuối trận nếu không lượt",
+					"cuối vòng nếu không lượt",
 					"bỏ nào được sử dụng",
 				},
 			},
@@ -849,7 +849,7 @@ return {
 			j_dusk={
 				name="Chạng Vạng",
 				text={
-					"Tái khích hoạt",
+					"Tái kích hoạt",
 					"tất cả bài trong",
 					"{C:attention}tay đánh cuối cùng{} của vòng",
 				},
@@ -1002,11 +1002,11 @@ return {
 				},
 			},
 			j_gros_michel={
-				name="Chuối Tiêu Chính Hiệu",
+				name="Chuối Tiêu Tùng",
 				text={
-					"Tăng {C:mult}+#1#{} hệ số nhân",
-					"nhưng có {C:green}#2# trong #3#{} khả năng",
-					"chuối thúi và bị huỷ",
+					"Tăng {C:mult}+#1#{} hệ số nhân nhưng",
+					"có {C:green}#2# trong #3#{} khả năng",
+					"bóc chuối thúi và bị huỷ",
 					"vào cuối vòng",
 				},
 			},
@@ -1693,7 +1693,7 @@ return {
 				},
 				unlock={
 					"Chơi tiếp một trận",
-					"đã nghỉ giữa chừng",
+					"đang nghỉ giữa chừng",
 				},
 			},
 			j_ticket={
@@ -1729,7 +1729,7 @@ return {
 				name="Thẻ Giao Dịch",
 				text={
 					"Nếu {C:attention}lượt bỏ đầu tiên{}",
-					"của trận chỉ có {C:attention}1{} lá, ",
+					"của vòng chỉ có {C:attention}1{} lá, ",
 					"bán nó với giá {C:money}#1#k",
 				},
 			},
@@ -1878,9 +1878,9 @@ return {
 			black_sticker={
 				name="Tem Đen",
 				text={
-					"Used this Joker",
-					"to win on {C:attention}Black",
-					"{C:attention}Stake{} difficulty",
+					"Joker này đã được",
+					"sử dụng để đánh",
+					"bại mức {C:attention}Cọc Đen{}",
 				},
 			},
 			blue_seal={
@@ -1893,11 +1893,11 @@ return {
 				},
 			},
 			blue_sticker={
-				name="Blue Sticker",
+				name="Tem Xanh",
 				text={
-					"Used this Joker",
-					"to win on {C:attention}Blue",
-					"{C:attention}Stake{} difficulty",
+					"Joker này đã được",
+					"sử dụng để đánh",
+					"bại mức {C:attention}Cọc Xanh{}",
 				},
 			},
 			card_chips={
@@ -1911,19 +1911,19 @@ return {
 				},
 			},
 			challenge_locked={
-				name="Locked",
+				name="Khoá",
 				text={
-					"Win a run with at least",
-					"#1# different decks to unlock",
-					"Challenge mode",
+					"Thắng ít nhất #1# bộ ",
+					"bài khác nhau để mở",
+					"khoá chế độ Thử Thách",
 					"{C:attention,s:2}#2#/#1#",
 				},
 			},
 			debuffed_default={
-				name="Debuffed",
+				name="Vô Hiệu",
 				text={
-					"All abilities",
-					"are disabled",
+					"Tất cả kỹ năng",
+					"đều bị vô hiệu hoá",
 				},
 			},
 			debuffed_playing_card={
@@ -1935,31 +1935,31 @@ return {
 				},
 			},
 			deck_locked_discover={
-				name="Locked",
+				name="Khoá",
 				text={
-					"Discover at least",
-					"{C:attention}#1#{} items from",
-					"your collection",
+					"Khám phá được ít nhất",
+					"{C:attention}#1#{} cái gì",
+					"đó trong bộ sưu tập",
 				},
 			},
 			deck_locked_stake={
-				name="Locked",
+				name="Khoá",
 				text={
-					"Win a run with any",
-					"deck on at least",
-					"{V:1}#1#{} difficulty",
+					"Thắng một trận",
+					"với một bộ bài",
+					"ở mức ít nhất {V:1}#1#{}",
 				},
 			},
 			deck_locked_win={
-				name="Locked",
+				name="Khoá",
 				text={
-					"Win a run with",
-					"{C:attention}#1#{}",
-					"on any difficulty",
+					"Thắng một trận",
+					"với {C:attention}#1#{} ở bất",
+					"kỳ mức cọc nào",
 				},
 			},
 			demo_locked={
-				name="Locked",
+				name="Khoá",
 				text={
 					"Not available",
 					"in this demo",
@@ -1990,41 +1990,41 @@ return {
 				},
 			},
 			gold_sticker={
-				name="Gold Sticker",
+				name="Tem Vàng",
 				text={
-					"Used this Joker",
-					"to win on {C:attention}Gold",
-					"{C:attention}Stake{} difficulty",
+					"Joker này đã được",
+					"sử dụng để đánh",
+					"bại mức {C:attention}Cọc Vàng{}",
 				},
 			},
 			green_sticker={
-				name="Green Sticker",
+				name="Tem Xanh Lá",
 				text={
-					"Used this Joker",
-					"to win on {C:attention}Green",
-					"{C:attention}Stake{} difficulty",
+					"Joker này đã được",
+					"sử dụng để đánh",
+					"bại mức {C:attention}Cọc Xanh Lá{}",
 				},
 			},
 			joker_locked_legendary={
-				name="Locked",
+				name="Khoá",
 				text={
-					"Find this Joker",
-					"from the {C:spectral}Soul{} card",
+					"Tìm Joker này",
+					"từ gói lá {C:spectral}Triệu Hồi Huyền Thoại{}",
 				},
 			},
 			locked={
-				name="Locked",
+				name="Khoá",
 				text={
 					"",
 					"",
 				},
 			},
 			orange_sticker={
-				name="Orange Sticker",
+				name="Tem Cam",
 				text={
-					"Used this Joker",
-					"to win on {C:attention}Orange",
-					"{C:attention}Stake{} difficulty",
+					"Joker này đã được",
+					"sử dụng để đánh",
+					"bại mức {C:attention}Cọc Cam{}",
 				},
 			},
 			p_arcana_jumbo={
@@ -2145,19 +2145,19 @@ return {
 				},
 			},
 			perishable={
-				name="Perishable",
+				name="Thoái Hoá Dần",
 				text={
-					"Debuffed after",
-					"{C:attention}#1#{} rounds",
-					"{C:inactive}({C:attention}#2#{C:inactive} remaining)",
+					"Sẽ bị mất tác",
+					"dùng sau {C:attention}#1#{} vòng",
+					"{C:inactive}(Còn lại {C:attention}#2#{C:inactive} vòng)",
 				},
 			},
 			pinned_left={
-				name="Pinned",
+				name="Ghim",
 				text={
-					"This Joker stays",
-					"pinned to the",
-					"leftmost position",
+					"Lá Joker này bị",
+					"ghim chặt vào bên",
+					"trái ngoài cùng",
 				},
 			},
 			playing_card={
@@ -2174,11 +2174,11 @@ return {
 				},
 			},
 			purple_sticker={
-				name="Purple Sticker",
+				name="Tem Tím",
 				text={
-					"Used this Joker",
-					"to win on {C:attention}Purple",
-					"{C:attention}Stake{} difficulty",
+					"Joker này đã được",
+					"sử dụng để đánh",
+					"bại mức {C:attention}Cọc Tím{}",
 				},
 			},
 			red_seal={
@@ -2189,114 +2189,114 @@ return {
 				},
 			},
 			red_sticker={
-				name="Red Sticker",
+				name="Tem Đỏ",
 				text={
-					"Used this Joker",
-					"to win on {C:attention}Red",
-					"{C:attention}Stake{} difficulty",
+					"Joker này đã được",
+					"sử dụng để đánh",
+					"bại mức {C:attention}Cọc Đỏ{}",
 				},
 			},
 			remove_negative={
-				name="n",
+				name="Khôi Phục Âm Bản",
 				text={
-					"{C:inactive,s:0.9}(Removes {C:dark_edition,s:0.9}Negative{C:inactive,s:0.9} from copy)",
+					"{C:inactive,s:0.9}(Gỡ bỏ {C:dark_edition,s:0.9}In Âm Bản{C:inactive,s:0.9} từ bản sao)",
 				},
 			},
 			rental={
-				name="Rental",
+				name="Thuê",
 				text={
-					"Lose {C:money}#1#k{} at",
-					"end of round",
+					"Trả {C:money}#1#k{} vào",
+					"cuối vòng",
 				},
 			},
 			undiscovered_booster={
-				name="Not Discovered",
+				name="Chưa Khám Phá",
 				text={
-					"Open this pack",
-					"in an unseeded run",
-					"to learn what it does",
+					"Mở gói này trong một trận ",
+					"để ghi lại công dụng của nó ",
+					"(Không được dùng seed)",
 				},
 			},
 			undiscovered_edition={
-				name="Not Discovered",
+				name="Chưa Khám Phá",
 				text={
-					"Find this edition",
-					"in an unseeded run",
-					"to learn what it does",
+					"Mở phiên bản này trong một trận ",
+					"để ghi lại công dụng của nó ",
+					"(Không được dùng seed)",
 				},
 			},
 			undiscovered_joker={
-				name="Not Discovered",
+				name="Chưa Khám Phá",
 				text={
-					"Purchase or use",
-					"this card in an",
-					"unseeded run to",
-					"learn what it does",
+					"Mua hoặc sử dùng Joker ",
+					"này trong một trận để ",
+					"ghi lại công dụng của nó ",
+					"(Không được dùng seed)",
 				},
 			},
 			undiscovered_planet={
-				name="Not Discovered",
+				name="Chưa Khám Phá",
 				text={
-					"Purchase or use",
-					"this card in an",
-					"unseeded run to",
-					"learn what it does",
+					"Mua hoặc sử dùng lá này ",
+					"này trong một trận để ",
+					"ghi lại công dụng của nó ",
+					"(Không được dùng seed)",
 				},
 			},
 			undiscovered_spectral={
-				name="Not Discovered",
+				name="Chưa Khám Phá",
 				text={
-					"Purchase or use",
-					"this card in an",
-					"unseeded run to",
-					"learn what it does",
+					"Mua hoặc sử dùng lá này ",
+					"này trong một trận để ",
+					"ghi lại công dụng của nó ",
+					"(Không được dùng seed)",
 				},
 			},
 			undiscovered_tag={
-				name="Not Discovered",
+				name="Chưa Khám Phá",
 				text={
-					"Use this tag in",
-					"an unseeded run to",
-					"learn what it does",
+					"Dùng nhãn này trong một trận ",
+					"để ghi lại công dụng của nó ",
+					"(Không được dùng seed)",
 				},
 			},
 			undiscovered_tarot={
-				name="Not Discovered",
+				name="Chưa Khám Phá",
 				text={
-					"Purchase or use",
-					"this card in an",
-					"unseeded run to",
-					"learn what it does",
+					"Mua hoặc sử dùng lá này ",
+					"này trong một trận để ",
+					"ghi lại công dụng của nó ",
+					"(Không được dùng seed)",
 				},
 			},
 			undiscovered_voucher={
-				name="Not Discovered",
+				name="Chưa Khám Phá",
 				text={
-					"Redeem this",
-					"voucher in an",
-					"unseeded run to",
-					"learn what it does",
+					"Thu thập phiếu chứng nhận",
+					"này trong một trận để",
+					"ghi lại công dụng của nó",
+					"(Không được dùng seed)",
 				},
 			},
 			white_sticker={
-				name="White Sticker",
+				name="Tem Trắng",
 				text={
-					"Used this Joker",
-					"to win on {C:attention}White",
-					"{C:attention}Stake{} difficulty",
+					"Joker này đã được",
+					"sử dụng để đánh",
+					"bại mức {C:attention}Cọc Trắng{}",
 				},
 			},
 			wip_locked={
-				name="Locked",
+				name="Khoá",
 				text={
-					"Work in",
-					"progress",
+					"Đang thực",
+					"hiện",
 				},
 			},
 		},
 		Planet={
 			c_ceres={
-				name="Hành tinh lùn Ceres",
+				name="Hành tinh Ceres",
 				text={
 					"{S:0.8}({S:0.8,V:1}cấp. #1#{S:0.8}){} Nâng cấp",
 					"tay {C:attention}#2#",
@@ -2314,7 +2314,7 @@ return {
 				},
 			},
 			c_eris={
-				name="Hành tinh lùn Eris",
+				name="Hành tinh Eris",
 				text={
 					"{S:0.8}({S:0.8,V:1}cấp. #1#{S:0.8}){} Nâng cấp",
 					"tay {C:attention}#2#",
@@ -2359,7 +2359,7 @@ return {
 				},
 			},
 			c_planet_x={
-				name="Hanh tinh X",
+				name="Hành tinh X",
 				text={
 					"{S:0.8}({S:0.8,V:1}cấp. #1#{S:0.8}){} Nâng cấp",
 					"tay {C:attention}#2#",
@@ -2368,7 +2368,7 @@ return {
 				},
 			},
 			c_pluto={
-				name="*Sao Diêm Vương",
+				name="Sao Diêm Vương",
 				text={
 					"{S:0.8}({S:0.8,V:1}cấp. #1#{S:0.8}){} Nâng cấp",
 					"tay {C:attention}#2#",
@@ -2696,7 +2696,7 @@ return {
 				name="Nhãn Tháo Vác",
 				text={
 					"Nhận {C:money}#1#k{} mỗi {C:blue}lượt đánh{}",
-					"được tung ra trong cả trận",
+					"được tung ra trong cả vòng",
 					"{C:inactive}(Hiện tại sẽ nhận {C:money}#2#k{C:inactive})",
 				},
 			},
@@ -3294,7 +3294,7 @@ return {
 					"Mọi {C:attention}Gói Thiên Hà{} luân",
 					"bao gồm lá {C:planet}Hành Tinh{}",
 					"ứng với {C:attention}tay bài{} ",
-					"chơi nhiêu nhất cả trận",
+					"chơi nhiều nhất cả trận",
 				},
 			},
 			v_wasteful={
@@ -3627,7 +3627,7 @@ return {
 			k_reroll="Đổi mới",
 			k_reset="Đổi lại",
 			k_reward="Phần thưởng",
-			k_round="Trận",
+			k_round="Vòng",
 			k_safe_ex="An toàn!",
 			k_saved_ex="An toàn!",
 			k_seed="Seed",
@@ -4236,7 +4236,7 @@ return {
 				"Tất cả Joker dính {C:eternal}Bất Ly Thân{}",
 			},
 			ch_c_chips_dollar_cap={
-				"{C:blue}Tổng phỉnh{} không được qua vượt qua {C:money}k",
+				"{C:blue}Tổng phỉnh{} không được qua vượt qua {C:money}tiền{} sở hữu",
 			},
 			ch_c_daily={
 				"{E:1,s:1.2,C:red}Thử Thách Hằng Ngày!",
