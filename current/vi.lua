@@ -67,8 +67,8 @@ return {
 				name="Green Deck",
 				text={
 					"At end of each Round:",
-					"{C:money}$#1#{s:0.85} per remaining {C:blue}Hand",
-					"{C:money}$#2#{s:0.85} per remaining {C:red}Discard",
+					"{C:money}#1#k{s:0.85} per remaining {C:blue}Hand",
+					"{C:money}#2#k{s:0.85} per remaining {C:red}Discard",
 					"Earn no {C:attention}Interest",
 				},
 			},
@@ -117,7 +117,7 @@ return {
 				name="Bộ Bài Vàng",
 				text={
 					"Khởi đầu với",
-					"thêm {C:money}$#1#",
+					"thêm {C:money}#1#k",
 				},
 			},
 			b_zodiac={
@@ -146,49 +146,49 @@ return {
 				},
 			},
 			bl_club={
-				name="The Club",
+				name="Chuồn Chuồn",
 				text={
-					"All Club cards",
-					"are debuffed",
+					"Mọi con Chuồn",
+					"đều bị vô hiệu",
 				},
 			},
 			bl_eye={
-				name="The Eye",
+				name="Con Mắt",
 				text={
-					"No repeat hand",
-					"types this round",
+					"Không được lập lại",
+					"tay bài đã dùng trong màn",
 				},
 			},
 			bl_final_acorn={
-				name="Amber Acorn",
+				name="Hạt Dẻ Hổ Phách",
 				text={
-					"Flips and shuffles",
-					"all Joker cards",
+					"Úp và tráo",
+					"tất cả Joker",
 				},
 			},
 			bl_final_bell={
-				name="Cerulean Bell",
+				name="Chuông Đồng Xanh Lam",
 				text={
-					"Forces 1 card to",
-					"always be selected",
+					"Ép buộc phải chọn 1",
+					"lá chỉ định bất kỳ",
 				},
 			},
 			bl_final_heart={
-				name="Crimson Heart",
+				name="Trái Tim Đỏ Thẩm",
 				text={
-					"One random Joker",
-					"disabled every hand",
+					"Một Joker bất kỳ bị vô hiệu hoá,",
+					"đổi mỗi lượt đánh tung ra",
 				},
 			},
 			bl_final_leaf={
-				name="Verdant Leaf",
+				name="Lá Cây Xanh Rờn",
 				text={
-					"All cards debuffed",
-					"until 1 Joker sold",
+					"Tất cả bài đều bị vô hiệu hoá",
+					"cho tới khi ",
 				},
 			},
 			bl_final_vessel={
-				name="Violet Vessel",
+				name="Chai Đựng Tím Lịm",
 				text={
 					"Very large blind",
 				},
@@ -265,7 +265,7 @@ return {
 				name="The Ox",
 				text={
 					"Playing a #1#",
-					"sets money to $0",
+					"sets money to 0k",
 				},
 			},
 			bl_pillar={
@@ -305,7 +305,7 @@ return {
 			bl_tooth={
 				name="The Tooth",
 				text={
-					"Lose $1 per",
+					"Lose 1k per",
 					"card played",
 				},
 			},
@@ -394,7 +394,7 @@ return {
 			m_gold={
 				name="Thẻ Vàng",
 				text={
-					"Nhận {C:money}$#1#{} nếu",
+					"Nhận {C:money}#1#k{} nếu",
 					"lá bài trên tay còn được giữ",
 					"vào cuối trận",
 				},
@@ -405,7 +405,7 @@ return {
 					"{C:green}#1# trong #3#{} khả năng",
 					"nhận được {C:mult}+#2#{} Hệ Số Nhân và",
 					"{C:green}#1# trong #5#{} khả năng",
-					"trúng số được {C:money}$#4#",
+					"trúng số được {C:money}#4#k",
 				},
 			},
 			m_mult={
@@ -567,7 +567,7 @@ return {
 				name="Ủng Đòn Bẫy",
 				text={
 					"Tăng {C:mult}+#1#{} hệ số nhân với",
-					"mỗi {C:money}$#2#{} sở hữu",
+					"mỗi {C:money}#2#k{} sở hữu",
 					"{C:inactive}(Hiện tại tăng {C:mult}+#3#{C:inactive} hệ số)",
 				},
 				unlock={
@@ -590,7 +590,7 @@ return {
 				name="Bò Tót",
 				text={
 					"Tăng {C:chips}+#1#{} phỉnh ",
-					"cho mỗi {C:money}$1{} sở hữu",
+					"cho mỗi {C:money}1k{} sở hữu",
 					"{C:inactive}(Hiện tại sẽ tăng {C:chips}+#2#{C:inactive} phỉnh)",
 				},
 			},
@@ -620,7 +620,7 @@ return {
 				text={
 					"Mỗi lá bài {C:attention}hình{}",
 					"có {C:green}#1# trong #2#{} khả năng",
-					"tăng {C:money}$2{} khi được ghi điểm",
+					"tăng {C:money}2k{} khi được ghi điểm",
 				},
 			},
 			j_caino={
@@ -697,13 +697,13 @@ return {
 				text={
 					"Khi bắt đầu vòng đấu, ",
 					"nhận vĩnh viễn một {C:attention}lá đánh{} ngẫu nhiên",
-					"với một {C:attention}dấu ấn{} ngẫu hiên ",
+					"với một {C:attention}dấu mộc{} ngẫu hiên ",
 					"và đặt nó lên tay",
 				},
 				unlock={
 					"Sở hữu một lá bài Vàng",
 					"được đóng dấu bởi",
-					"một {C:attention,E:1}Ấn Vàng",
+					"một {C:attention,E:1}Mộc Vàng",
 				},
 			},
 			j_chaos={
@@ -734,10 +734,10 @@ return {
 			j_cloud_9={
 				name="Lên 9 Tầng Mây",
 				text={
-					"Nhận được {C:money}$#1#{} mỗi",
+					"Nhận được {C:money}#1#k{} mỗi",
 					"lá {C:attention}9{} trong {C:attention}toàn bộ bộ bài",
 					"vào cuối vòng",
-					"{C:inactive}(Hiện tại sẽ nhận {C:money}$#2#{}{C:inactive})",
+					"{C:inactive}(Hiện tại sẽ nhận {C:money}#2#k{}{C:inactive})",
 				},
 			},
 			j_constellation={
@@ -769,13 +769,13 @@ return {
 				name="Thẻ Tín Dụng",
 				text={
 					"Cho phép nợ đến",
-					"{C:red}-$#1#{}",
+					"{C:red}-#1#k{}",
 				},
 			},
 			j_delayed_grat={
 				name="Kiên Nhẫn",
 				text={
-					"Nhận {C:money}$#1#{} mỗi {C:attention}lượt bỏ{} vào",
+					"Nhận {C:money}#1#k{} mỗi {C:attention}lượt bỏ{} vào",
 					"cuối trận nếu không lượt",
 					"bỏ nào được sử dụng",
 				},
@@ -857,7 +857,7 @@ return {
 			j_egg={
 				name="Ấp Trứng",
 				text={
-					"Tăng {C:money}$#1#{}",
+					"Tăng {C:money}#1#k{}",
 					"{C:attention}giá bán{}",
 					"vào cuối vòng",
 				},
@@ -883,7 +883,7 @@ return {
 			j_faceless={
 				name="Joker Vô Diện",
 				text={
-					"Nhận {C:money}$#1#{} nếu có từ {C:attention}#2#{}",
+					"Nhận {C:money}#1#k{} nếu có từ {C:attention}#2#{}",
 					"lá {C:attention}bài hình{}",
 					"được bỏ đi",
 					"cùng lúc",
@@ -950,7 +950,7 @@ return {
 			j_gift={
 				name="Thẻ Quà Tặng",
 				text={
-					"Tăng {C:money}$#1#{} {C:attention}giá bán",
+					"Tăng {C:money}#1#k{} {C:attention}giá bán",
 					"vào tất cả {C:attention}Joker{} và",
 					"thẻ {C:attention}Tiêu Hao{} vào",
 					"cuối vòng",
@@ -981,7 +981,7 @@ return {
 			j_golden={
 				name="Joker Vàng",
 				text={
-					"Nhận {C:money}$#1#{} ",
+					"Nhận {C:money}#1#k{} ",
 					"vào cuối vòng",
 				},
 			},
@@ -1187,7 +1187,7 @@ return {
 			j_mail={
 				name="Mail-In Rebate",
 				text={
-					"Earn {C:money}$#1#{} for each",
+					"Earn {C:money}#1#k{} for each",
 					"discarded {C:attention}#2#{}, rank",
 					"changes every round",
 				},
@@ -1203,7 +1203,7 @@ return {
 			j_matador={
 				name="Matador",
 				text={
-					"Earn {C:money}$#1#{} if played",
+					"Earn {C:money}#1#k{} if played",
 					"hand triggers the",
 					"{C:attention}Boss Blind{} ability",
 				},
@@ -1394,7 +1394,7 @@ return {
 					"Each {C:attention}face{} card",
 					"held in hand has",
 					"a {C:green}#2# in #3#{} chance",
-					"to give {C:money}$#1#{}",
+					"to give {C:money}#1#k{}",
 				},
 			},
 			j_ride_the_bus={
@@ -1430,8 +1430,8 @@ return {
 			j_rocket={
 				name="Rocket",
 				text={
-					"Earn {C:money}$#1#{} at end of round",
-					"Payout increases by {C:money}$#2#{}",
+					"Earn {C:money}#1#k{} at end of round",
+					"Payout increases by {C:money}#2#k{}",
 					"when {C:attention}Boss Blind{} is defeated",
 				},
 			},
@@ -1440,7 +1440,7 @@ return {
 				text={
 					"Played cards with",
 					"{C:diamonds}Diamond{} suit earn",
-					"{C:money}$#1#{} when scored",
+					"{C:money}#1#k{} when scored",
 				},
 				unlock={
 					"Have at least {E:1,C:attention}#1#",
@@ -1460,13 +1460,13 @@ return {
 			j_satellite={
 				name="Satellite",
 				text={
-					"Earn {C:money}$#1#{} at end of",
+					"Earn {C:money}#1#k{} at end of",
 					"round per unique {C:planet}Planet",
 					"card used this run",
-					"{C:inactive}(Currently {C:money}$#2#{C:inactive})",
+					"{C:inactive}(Currently {C:money}#2#k{C:inactive})",
 				},
 				unlock={
-					"Have {E:1,C:money}$#1#",
+					"Have {E:1,C:money}#1#k",
 					"or more",
 				},
 			},
@@ -1700,7 +1700,7 @@ return {
 				name="Thẻ Vàng",
 				text={
 					"Ghi điểm thẻ {C:attention}Vàng{}",
-					"cũng nhận thêm {C:money}$#1#{}",
+					"cũng nhận thêm {C:money}#1#k{}",
 				},
 				unlock={
 					"Ghi điểm 5 lá",
@@ -1711,15 +1711,15 @@ return {
 			j_to_the_moon={
 				name="Lên Tới Nóc",
 				text={
-					"Nhận thêm {C:money}$#1#{} {C:attention}tiền lãi{} ",
-					"cho mỗi {C:money}$5{} sở hữu",
+					"Nhận thêm {C:money}#1#k{} {C:attention}tiền lãi{} ",
+					"cho mỗi {C:money}5k{} sở hữu",
 					"ở cuối vòng",
 				},
 			},
 			j_todo_list={
 				name="Danh Sách Mục Tiêu",
 				text={
-					"Nhận {C:money}$#1#{} nếu {C:attention}tay đánh{}",
+					"Nhận {C:money}#1#k{} nếu {C:attention}tay đánh{}",
 					"là một {C:attention}#2#{},",
 					"tay đánh chỉ định sẽ",
 					"được đổi vào cuối vòng",
@@ -1730,7 +1730,7 @@ return {
 				text={
 					"Nếu {C:attention}lượt bỏ đầu tiên{}",
 					"của trận chỉ có {C:attention}1{} lá, ",
-					"bán nó với giá {C:money}$#1#",
+					"bán nó với giá {C:money}#1#k",
 				},
 			},
 			j_tribe={
@@ -1804,7 +1804,7 @@ return {
 				text={
 					"Create a {C:purple}Tarot{} card",
 					"if hand is played",
-					"with {C:money}$#1#{} or less",
+					"with {C:money}#1#k{} or less",
 				},
 			},
 			j_vampire={
@@ -1884,7 +1884,7 @@ return {
 				},
 			},
 			blue_seal={
-				name="Ấn Xanh",
+				name="Mộc Xanh",
 				text={
 					"Tạo một lá {C:planet}Hành Tinh{}",
 					"ứng với {C:attention}tay bài{} cuối cùng",
@@ -1982,9 +1982,9 @@ return {
 				},
 			},
 			gold_seal={
-				name="Ấn Vàng",
+				name="Mộc Vàng",
 				text={
-					"Nhận được {C:money}$3{} khi",
+					"Nhận được {C:money}3k{} khi",
 					"lá này được đánh",
 					"và được tính điểm",
 				},
@@ -2166,7 +2166,7 @@ return {
 				},
 			},
 			purple_seal={
-				name="Ấn Tím",
+				name="Mộc Tím",
 				text={
 					"Tạo một lá {C:tarot}Vận Mệnh{}",
 					"khi {C:attention}được bỏ{}",
@@ -2182,7 +2182,7 @@ return {
 				},
 			},
 			red_seal={
-				name="Ấn Đỏ",
+				name="Mộc Đỏ",
 				text={
 					"Tái kích hoạt lá này",
 					"thêm {C:attention}1{} lần nữa",
@@ -2205,7 +2205,7 @@ return {
 			rental={
 				name="Rental",
 				text={
-					"Lose {C:money}$#1#{} at",
+					"Lose {C:money}#1#k{} at",
 					"end of round",
 				},
 			},
@@ -2484,7 +2484,7 @@ return {
 				text={
 					"Destroys {C:attention}#1#{} random",
 					"cards in hand,",
-					"gain {C:money}$#2#",
+					"gain {C:money}#2#k",
 				},
 			},
 			c_incantation={
@@ -2550,7 +2550,7 @@ return {
 				text={
 					"Creates a random",
 					"{C:red}Rare{C:attention} Joker{},",
-					"sets money to {C:money}$0",
+					"sets money to {C:money}0k",
 				},
 			},
 		},
@@ -2574,7 +2574,7 @@ return {
 				name="Gold Stake",
 				text={
 					"Shop can have {C:attention}Rental{} Jokers",
-					"{C:inactive,s:0.8}(Costs {C:money,s:0.8}$3{C:inactive,s:0.8} per round)",
+					"{C:inactive,s:0.8}(Costs {C:money,s:0.8}3k{C:inactive,s:0.8} per round)",
 					"{s:0.8}Applies all previous Stakes",
 				},
 			},
@@ -2651,7 +2651,7 @@ return {
 				name="Nhãn Xúc Sắc Xuất Sắc",
 				text={
 					"Đổi mới bài trong cửa hàng",
-					"tiếp theo bắt đầu với {C:money}$0",
+					"tiếp theo bắt đầu với {C:money}0k",
 				},
 			},
 			tag_double={
@@ -2666,7 +2666,7 @@ return {
 				name="Nhãn Buộc Tiền",
 				text={
 					"Buộc tiền để gấp đôi",
-					"{C:inactive}(Tối đa {C:money}$#1#{C:inactive})",
+					"{C:inactive}(Tối đa {C:money}#1#k{C:inactive})",
 				},
 			},
 			tag_ethereal={
@@ -2687,17 +2687,17 @@ return {
 			tag_garbage={
 				name="Nhãn Tái Chế",
 				text={
-					"Được trả {C:money}$#1#{} mỗi {C:red}lượt bỏ{} ",
+					"Được trả {C:money}#1#k{} mỗi {C:red}lượt bỏ{} ",
 					"không được sử dụng trong cả trận",
-					"{C:inactive}(Hiện tại sẽ nhận {C:money}$#2#{C:inactive})",
+					"{C:inactive}(Hiện tại sẽ nhận {C:money}#2#k{C:inactive})",
 				},
 			},
 			tag_handy={
 				name="Nhãn Tháo Vác",
 				text={
-					"Nhận {C:money}$#1#{} mỗi {C:blue}lượt đánh{}",
+					"Nhận {C:money}#1#k{} mỗi {C:blue}lượt đánh{}",
 					"được tung ra trong cả trận",
-					"{C:inactive}(Hiện tại sẽ nhận {C:money}$#2#{C:inactive})",
+					"{C:inactive}(Hiện tại sẽ nhận {C:money}#2#k{C:inactive})",
 				},
 			},
 			tag_holo={
@@ -2713,7 +2713,7 @@ return {
 				text={
 					"Sau khi hạ gục",
 					"màn cược trùm,",
-					"nhận {C:money}$#1#",
+					"nhận {C:money}#1#k",
 				},
 			},
 			tag_juggle={
@@ -2763,9 +2763,9 @@ return {
 			tag_skip={
 				name="Nhãn Tốc Độ",
 				text={
-					"Cho {C:money}$#1#{} mỗi lượt bỏ cược",
+					"Cho {C:money}#1#k{} mỗi lượt bỏ cược",
 					"trong ván này",
-					"{C:inactive}(Hiện tại sẽ cho {C:money}$#2#{C:inactive})",
+					"{C:inactive}(Hiện tại sẽ cho {C:money}#2#k{C:inactive})",
 				},
 			},
 			tag_standard={
@@ -2793,7 +2793,7 @@ return {
 			tag_voucher={
 				name="Nhãn Khuyến Mãi",
 				text={
-					"Thêm một {C:voucher}Phiếu Khuyến Mãi",
+					"Thêm một {C:voucher}Phiếu Chứng Nhận",
 					"vào cửa hàng tiếp theo",
 				},
 			},
@@ -2868,7 +2868,7 @@ return {
 				name="Kẻ Ẩn Dật",
 				text={
 					"Gấp đôi số tiền trên tay",
-					"{C:inactive}(Tối đa chỉ được {C:money}$#1#{C:inactive})",
+					"{C:inactive}(Tối đa chỉ được {C:money}#1#k{C:inactive})",
 				},
 			},
 			c_high_priestess={
@@ -2948,8 +2948,8 @@ return {
 				text={
 					"Tặng tiền bằng tổng giá trị ",
 					"của tất cả lá Joker",
-					"{C:inactive}(Tối đa được {C:money}$#1#{C:inactive})",
-					"{C:inactive}(Hiện tại sẽ được {C:money}$#2#{C:inactive})",
+					"{C:inactive}(Tối đa được {C:money}#1#k{C:inactive})",
+					"{C:inactive}(Hiện tại sẽ được {C:money}#2#k{C:inactive})",
 				},
 			},
 			c_tower={
@@ -3014,7 +3014,7 @@ return {
 				text={
 					"Được phép đổi mới cược Trùm",
 					"{C:attention}1{} lần mỗi canh bạc,",
-					"tốn {C:money}$#1#{} mỗi lần đổi",
+					"tốn {C:money}#1#k{} mỗi lần đổi",
 				},
 			},
 			v_glow_up={
@@ -3060,7 +3060,7 @@ return {
 				text={
 					"{C:attention}Bài đánh{} trong cửa hàng",
 					"có thể được thêm {C:enhanced}Cường Hoá{},",
-					"{C:dark_edition}Phiên Bản{}, và/hoặc một {C:attention}Dấu Ấn{}",
+					"{C:dark_edition}Phiên Bản{}, và/hoặc một {C:attention}Dấu Mộc{}",
 				},
 				unlock={
 					"Mua tổng cộng",
@@ -3076,8 +3076,8 @@ return {
 					"được giảm tụt quần {C:attention}#1#%{}",
 				},
 				unlock={
-					"Lĩnh ít nhất",
-					"{C:attention}#1#{C:voucher} Phiếu Khuyến Mãi{}",
+					"Thu thập ít nhất",
+					"{C:attention}#1#{C:voucher} Phiếu Chứng Nhận{}",
 					"trong một trận",
 				},
 			},
@@ -3094,7 +3094,7 @@ return {
 				text={
 					"Nâng giới hạn ",
 					"lãi xuất nhận được",
-					"mỗi vòng lên {C:money}$#1#{}",
+					"mỗi vòng lên {C:money}#1#k{}",
 				},
 				unlock={
 					"Đối đa hoá tiền lãi",
@@ -3160,8 +3160,8 @@ return {
 				},
 				unlock={
 					"Spend a total of",
-					"{C:money}$#1#{} at the shop",
-					"{C:inactive}($#2#)",
+					"{C:money}#1#k{} at the shop",
+					"{C:inactive}(#2#k)",
 				},
 			},
 			v_paint_brush={
@@ -3231,7 +3231,7 @@ return {
 				name="Reroll Glut",
 				text={
 					"Rerolls cost",
-					"{C:money}$#1#{} less",
+					"{C:money}#1#k{} less",
 				},
 				unlock={
 					"Reroll the shop a",
@@ -3243,7 +3243,7 @@ return {
 				name="Reroll Surplus",
 				text={
 					"Rerolls cost",
-					"{C:money}$#1#{} less",
+					"{C:money}#1#k{} less",
 				},
 			},
 			v_retcon={
@@ -3251,7 +3251,7 @@ return {
 				text={
 					"Reroll Boss Blind",
 					"{C:attention}unlimited{} times,",
-					"{C:money}$#1#{} per roll",
+					"{C:money}#1#k{} per roll",
 				},
 				unlock={
 					"Discover",
@@ -3263,7 +3263,7 @@ return {
 				text={
 					"Raise the cap on",
 					"interest earned in",
-					"each round to {C:money}$#1#{}",
+					"each round to {C:money}#1#k{}",
 				},
 			},
 			v_tarot_merchant={
@@ -3330,7 +3330,7 @@ return {
 			legendary="Discover a Legendary Joker",
 			low_stakes="Win a run on at least Red Stake difficulty",
 			mid_stakes="Win a run on at least Black Stake difficulty",
-			nest_egg="Have $400 or more during a single run",
+			nest_egg="Have 400k or more during a single run",
 			retrograde="Get any poker hand to level 10",
 			roi="Buy 5 Vouchers by Ante 4",
 			royale="Play a Royal Flush",
@@ -3427,11 +3427,11 @@ return {
 			},
 		},
 		dictionary={
-			["$"]="$",
+			["$"]="k",
 			b_FAQ="FAQ",
 			b_and_use="& USE",
 			b_back="Quay lại",
-			b_blinds="Màn cược",
+			b_blinds="Mức Cược",
 			b_booster_packs="Gói Tăng Cường",
 			b_buy="MUA",
 			b_cash_out="Rút Tiền",
@@ -3461,7 +3461,7 @@ return {
 			b_main_menu="Bảng Chọn Chính",
 			b_music="Nhạc",
 			b_new_challenge="Bắt đầu thử thách mới",
-			b_new_run="Chơi lượt mới",
+			b_new_run="Mới",
 			b_next="Tiếp",
 			b_next_round_1="Chiến",
 			b_next_round_2="Tiếp",
@@ -3484,7 +3484,7 @@ return {
 			b_rules="Luật",
 			b_run_info_1="Thông tin",
 			b_run_info_2="ván bài",
-			b_seals="Ấn bài",
+			b_seals="Dấu mộc",
 			b_seed="Seed",
 			b_select="CHỌN",
 			b_sell="BÁN",
@@ -3518,17 +3518,17 @@ return {
 			b_stake="Tem",
 			b_start_new_run="New Run",
 			b_stat_consumables="Tiêu hao",
-			b_stat_jokers="Bài Jokers",
-			b_stat_planets="Bài hành tinh",
-			b_stat_spectrals="Bài cô hồn",
-			b_stat_tarots="Bài vận mệnh",
-			b_stat_vouchers="Phiếu khuyến mãi",
+			b_stat_jokers="Joker",
+			b_stat_planets="Hành tinh",
+			b_stat_spectrals="Cô hồn",
+			b_stat_tarots="Vận mệnh",
+			b_stat_vouchers="Phiếu chứng nhận",
 			b_stats="Thông số",
 			b_tags="Dấu nhãn",
 			b_tarot_cards="Bài vận mệnh",
 			b_unlock_all="Mở khoá tất cả",
 			b_use="Sử dụng",
-			b_vouchers="Phiếu khuyến mãi",
+			b_vouchers="Phiếu chứng nhận",
 			b_wishlist="Wishlist on Steam",
 			k_aces="Xì",
 			k_achievement="Thành tựu",
@@ -3563,7 +3563,7 @@ return {
 			k_daily_run="Daily Run",
 			k_debuffed="Vô hiệu",
 			k_deck="Bộ bài",
-			k_deck_stake_wins="Deck Stake Wins",
+			k_deck_stake_wins="Tổng Cược Vượt Qua",
 			k_defeated_by="Defeated By",
 			k_demo_version_ex="Demo Version!",
 			k_disabled_ex="Bị vô hiệu!",
@@ -3600,8 +3600,8 @@ return {
 			k_mult="Nhân",
 			k_no_other_jokers="No other Jokers!",
 			k_no_reward="Không có phần thường",
-			k_no_room_ex="No Room!",
-			k_no_space_ex="No Space!",
+			k_no_room_ex="Hết Chỗ!",
+			k_no_space_ex="Hết Chỗ!",
 			k_none="Hông :)",
 			k_nope_ex="Hông =))",
 			k_not_allowed_ex="Không Chấp Nhận!",
@@ -3650,10 +3650,10 @@ return {
 			k_upgrade_ex="Nâng cấp!",
 			k_val_up="Tăng giá trị!",
 			k_view="Xem",
-			k_voucher="Phiếu khuyến mãi",
+			k_voucher="Phiếu chứng nhận",
 			k_vouchers_cap="PHIẾU",
 			k_wins="Bàn Thắng",
-			k_x_base="X Base",
+			k_x_base="X Gốc",
 			ml_bloom_opt={
 				"Tắt",
 				"Bật",
@@ -3689,7 +3689,7 @@ return {
 			},
 			ml_edition_seal_enhancement_explanation={
 				"Bài đánh có thể có một",
-				"Cường Hoá, Phiên Bản, và Dấu Ấn",
+				"Cường Hoá, Phiên Bản, và Dấu Mộc",
 			},
 			ml_eternal={
 				"Bất Ly Thân",
@@ -3771,7 +3771,7 @@ return {
 			ph_mr_bones="Saved by Mr. Bones",
 			ph_no_boss_active="no boss active",
 			ph_no_vouchers="No vouchers redeemed this run",
-			ph_score_at_least="Score at least",
+			ph_score_at_least="Ghi điểm ít nhất",
 			ph_score_cards_discarded="Cards Discarded",
 			ph_score_cards_played="Cards Played",
 			ph_score_cards_purchased="Cards Purchased",
@@ -3788,16 +3788,16 @@ return {
 			ph_stat_voucher="Number of times this Voucher has been redeemed",
 			ph_unscored_hand="Hand will not score",
 			ph_up_ante_1="Nâng Canh Bạc",
-			ph_up_ante_2="Tăng tất cả mức cược",
-			ph_up_ante_3="Làm mới mức cược",
-			ph_vouchers_redeemed="Vouchers redeemed this run",
+			ph_up_ante_2="Tăng tất cả canh bạc",
+			ph_up_ante_3="Làm mới canh bạc",
+			ph_vouchers_redeemed="Phiếu Chứng Nhận thu được trong trận",
 			ph_you_win="BẠN THẮNG RỒI!",
 			ph_you_win_demo="YOU WIN THE DEMO!",
 		},
 		high_scores={
 			boss_streak="Most Bosses in a Row",
 			collection="Collection",
-			current_streak="",
+			current_streak="Chuỗi thắng hiện tại",
 			furthest_ante="Số canh bạc cao nhất",
 			furthest_round="Trận đấu xa nhất",
 			hand="Điểm tay cao nhất",
@@ -3806,11 +3806,11 @@ return {
 			win_streak="Chuỗi thắng dài nhất",
 		},
 		labels={
-			blue_seal="Ấn Xanh",
+			blue_seal="Mộc Xanh",
 			common="Thường",
 			eternal="Bất Ly Thân",
 			foil="In Nổi",
-			gold_seal="Ấn Vàng",
+			gold_seal="Mộc Vàng",
 			holographic="In Ba Chiều",
 			legendary="Huyền Thoại",
 			locked="Locked",
@@ -3820,13 +3820,13 @@ return {
 			planet="Hành Tinh",
 			pluto_planet="Hành Tinh Lùn",
 			polychrome="In Đa Sắc",
-			purple_seal="Ấn Tím",
+			purple_seal="Mộc Tím",
 			rare="Hiếm",
-			red_seal="Ấn Đỏ",
+			red_seal="Mộc Đỏ",
 			rental="Thuê",
 			tarot="Vận Mệnh",
 			uncommon="Lạ",
-			voucher="Phiếu Khuyến Mãi",
+			voucher="Phiếu Chứng Nhận",
 		},
 		poker_hand_descriptions={
 			["Five of a Kind"]={
@@ -4204,7 +4204,7 @@ return {
 			completed="Hoàn thành được  #1#/#2#",
 			deck_preview_wheel_plural="Số có thể nhỏ hơn vì có #1# lá được rút bị úp",
 			deck_preview_wheel_singular="Số có thể nhỏ hơn vì có #1# lá được rút bị úp",
-			interest="#1# tiền lãi xuất mỗi $#2# (#3# max)",
+			interest="#1# tiền lãi xuất mỗi #2# (#3# max)",
 			loyalty_active="Đang Kích Hoạt!",
 			loyalty_inactive="Còn Lại #1#",
 			ml_foil_desc={
@@ -4227,8 +4227,8 @@ return {
 				"In Đa Sắc",
 				"X#1# hệ số nhân",
 			},
-			remaining_discard_money="Lượt Bỏ Còn Lại ($#1# each)",
-			remaining_hand_money="Lượt Đánh Còn Lại ($#1# each)",
+			remaining_discard_money="Lượt Bỏ Còn Lại (#1#k each)",
+			remaining_hand_money="Lượt Đánh Còn Lại (#1#k each)",
 			unlocked="Mở khoá được #1#/#2#",
 		},
 		v_text={
@@ -4236,7 +4236,7 @@ return {
 				"Tất cả Joker dính {C:eternal}Bất Ly Thân{}",
 			},
 			ch_c_chips_dollar_cap={
-				"{C:blue}Tổng phỉnh{} không được qua vượt qua {C:money}$",
+				"{C:blue}Tổng phỉnh{} không được qua vượt qua {C:money}k",
 			},
 			ch_c_daily={
 				"{E:1,s:1.2,C:red}Thử Thách Hằng Ngày!",
@@ -4245,16 +4245,16 @@ return {
 				"Tất cả bài {C:attention}ghi điểm{} trở nên {C:attention}vô hiệu{}",
 			},
 			ch_c_discard_cost={
-				"Mỗi lượt bỏ bài tốn {C:money}$#1#{}",
+				"Mỗi lượt bỏ bài tốn {C:money}#1#k{}",
 			},
 			ch_c_flipped_cards={
 				"{C:green}1 trong #1#{} lá bài rút được sẽ bị úp",
 			},
 			ch_c_inflation={
-				"Vĩnh viễn nâng giá của mọi thứ lên {C:money}$1{} mỗi lần mua gì đó",
+				"Vĩnh viễn nâng giá của mọi thứ lên {C:money}1k{} mỗi lần mua gì đó",
 			},
 			ch_c_minus_hand_size_per_X_dollar={
-				"Giữ ít hơn {C:red}1{} bài cho mỗi {C:money}$#1#{} sở hữu",
+				"Giữ ít hơn {C:red}1{} bài cho mỗi {C:money}#1#k{} sở hữu",
 			},
 			ch_c_no_extra_hand_money={
 				"{C:blue}Lượt Đánh{} dư không còn cho thêm tiền",
@@ -4290,7 +4290,7 @@ return {
 				"{C:red}#1#{} lượt bỏ mỗi vòng",
 			},
 			ch_m_dollars={
-				"Bắt đầu với {C:money}$#1#",
+				"Bắt đầu với {C:money}#1#k",
 			},
 			ch_m_hand_size={
 				"{C:attention}#1#{} kích cỡ tay",
@@ -4305,7 +4305,7 @@ return {
 				"{C:inactive}không có",
 			},
 			ch_m_reroll_cost={
-				"{C:money}$#1#{} giá đổi mới gốc",
+				"{C:money}#1#k{} giá đổi mới gốc",
 			},
 		},
 	},

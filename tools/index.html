@@ -39,6 +39,20 @@
             gap: 5px;
             align-items: baseline;
         }
+        #replacementTool {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #f1f1f1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            div {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -48,6 +62,19 @@
     <button id="saveButton2" class="styledButton" onClick="saveAsLua()" disabled>Save as Lua file</button>
     <button id="updateAllButton" class="styledButton" onclick="updateAll()" disabled>Update ALL!</button>
     <div id="mainContainer"></div>
+    <div id="replacementTool">
+        <div>
+            <h2>Text Replacement Tool</h2>
+            <label for="useRegExp">
+                (<input type="checkbox" id="useRegExp"> RegExp)
+            </label>
+        </div>
+        <label for="findText">Find:</label>
+        <input type="text" id="findText" placeholder=""><br>        
+        <label for="replaceText">Replace with:</label>
+        <input type="text" id="replaceText" placeholder=""><br>        
+        <button onclick="replace()">Apply</button>
+      </div>
     <script src="script.js"></script>
 </body>
 </html>

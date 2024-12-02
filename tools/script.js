@@ -1,6 +1,42 @@
 const file_input = document.getElementById('fileInput');
 const update_all_button = document.getElementById('updateAllButton');
 let buttons = [];
+let inputs = []
+
+file_input.addEventListener('change', event => {
+    const file = event.target.files[0];
+
+    if (file) {
+        console.log("Loaded.");
+
+        if (file.type === 'application/json') {
+            const reader = new FileReader();
+            reader.onload = e => {
+                try {
+                    buttons = [];
+                    inputs = [];
+                    const main_container = document.getElementById("mainContainer");
+                    main_container.innerHTML = '';
+                    data = JSON.parse(e.target.result);
+                    console.log("Parsed.");
+                    show(data, main_container);
+                    document.getElementById("saveButton1").disabled = false;
+                    document.getElementById("saveButton2").disabled = false;
+                    update_all_button.disabled = false;
+                } catch (err) {
+                    alert("Parsing error!");
+                }
+            };
+            reader.readAsText(file);
+        }
+        else {
+            alert("Please select a valid JSON file.");
+        }
+    }
+    else {
+        alert("No file selected.");
+    }
+});
 
 function show(object, container, path) {
     if (typeof object === "string") {
@@ -15,6 +51,7 @@ function show(object, container, path) {
         update_button.innerHTML = "update";
         update_button.classList.add("styledButton");
         update_button.addEventListener('click', update_data(update_button, path, textinput));
+        inputs.push(textinput);
         buttons.push(update_button);
         container.classList.add("v-box");
         container.appendChild(textinput);
@@ -41,13 +78,14 @@ function show_object(object, container, path="") {
             update_button.innerHTML = "update";
             update_button.classList.add("styledButton");
             update_button.addEventListener('click', update_data(update_button, path, textarea, textarea.rows));
-            buttons.push(update_button);
             textarea.addEventListener("input", e => {
                 update_all_button.classList.add("wait");
                 update_button.classList.add("wait");
                 const lines = textarea.value.split('\n')
                 if (lines.length > textarea.rows) textarea.value = lines.slice(0, textarea.rows).join('\n');
             });
+            inputs.push(textarea);
+            buttons.push(update_button);
             sub_container.classList.add("v-box-2");
             sub_container.appendChild(textarea);
             sub_container.appendChild(update_button);
@@ -144,36 +182,18 @@ function updateAll() {
     update_all_button.classList.remove("wait");
 }
 
-file_input.addEventListener('change', event => {
-    const file = event.target.files[0];
-
-    if (file) {
-        console.log("Loaded.");
-
-        if (file.type === 'application/json') {
-            const reader = new FileReader();
-            reader.onload = e => {
-                try {
-                    buttons = [];
-                    const main_container = document.getElementById("mainContainer");
-                    main_container.innerHTML = '';
-                    data = JSON.parse(e.target.result);
-                    console.log("Parsed.");
-                    show(data, main_container);
-                    document.getElementById("saveButton1").disabled = false;
-                    document.getElementById("saveButton2").disabled = false;
-                    update_all_button.disabled = false;
-                } catch (err) {
-                    alert("Parsing error!");
-                }
-            };
-            reader.readAsText(file);
+function replace() {
+    const find_text = document.getElementById("findText").value;
+    const replace_text = document.getElementById("replaceText").value;
+    const use_reg_expr = document.getElementById("useRegExp").checked;
+    inputs.forEach((input) => {
+        if (!use_reg_expr) {
+            input.value = input.value.split(find_text).join(replace_text);
         }
         else {
-            alert("Please select a valid JSON file.");
+            const regex = new RegExp(find_text, 'g');
+            input.value = input.value.replace(regex, replace_text);
         }
-    }
-    else {
-        alert("No file selected.");
-    }
-});
+    });
+    update_all_button.click();
+}
