@@ -4,9 +4,9 @@ return {
 			b_abandoned={
 				name="Bộ Bài Bị Lãng Quên",
 				text={
-					"Bắt đầu với bộ bài",
-					"thiếu tất cả ",
-					"{C:attention}Bài Hình",
+					"Bắt đầu với",
+					"bộ bài thiếu ",
+					"đi những {C:attention}bài hình",
 				},
 			},
 			b_anaglyph={
@@ -43,22 +43,22 @@ return {
 				name="Bộ Bài Kẻ Ca Rô",
 				text={
 					"Bắt đầu với bộ bài với",
-					"{C:attention}26{} con {C:attention}{C:spades} Bích{} and",
-					"{C:attention}26{} con {C:attention}{C:spades} {C:hearts} Cơ{}",
+					"{C:attention}26{} con {C:attention}{C:spades}Bích{} và",
+					"{C:attention}26{} con {C:attention}{C:hearts}Cơ{}",
 				},
 			},
 			b_erratic={
 				name="Bộ Bài Độc Lạ Bình Dương",
 				text={
 					"Toàn bộ {C:attention}thứ hạng{} và",
-					"{C:attention}chất{} trong bộ ",
-					"bài được ngẫu nhiên hoá",
+					"{C:attention}chất{} trong bộ bài ",
+					"được ngẫu nhiên hoá",
 				},
 			},
 			b_ghost={
 				name="Bộ Bài Ma Quái",
 				text={
-					"Các lá {C:spectral}Cô Hồn{} có thể",
+					"Các lá {C:spectral}cô hồn{} có thể",
 					"lảng vảng trong cửa hàng và",
 					"bộ bài bắt đầu với một lá {C:spectral,T:c_hex}Yểm Chú{} card",
 				},
@@ -67,8 +67,8 @@ return {
 				name="Bộ Bài Xanh",
 				text={
 					"Vào vòng cuối, nhận",
-					"{C:money}#1#k{s:0.85} mỗi {C:blue}Lượt Đánh{} còn lại",
-					"{C:money}#2#k{s:0.85} mỗi {C:red}Lượt Bỏ{} còn lại",
+					"{C:money}#1#k{s:0.85} mỗi {C:blue}lượt đánh{} còn lại",
+					"{C:money}#2#k{s:0.85} mỗi {C:red}lượt bỏ{} còn lại",
 					"Nhưng không còn nhận {C:attention}lãi xuất",
 				},
 			},
@@ -648,8 +648,8 @@ return {
 				name="Ngọc Thụ Lâm Phong",
 				text={
 					"Chuyên gia xảo quyệt nhận ",
-					"{X:mult,C:white} X#1# {} hệ số nhân nếu chơi lại",
-					"một {C:attention}tay bài{} đã được chơi trong vòng",
+					"{X:mult,C:white} X#1# {} hệ số nhân nếu đánh lại",
+					"một {C:attention}tay bài{} đã sử dụng trong trận",
 				},
 			},
 			j_cartomancer={
@@ -678,7 +678,7 @@ return {
 				text={
 					"Nhận {X:mult,C:white} X#1# {} hệ số nhân nhưng ",
 					"có {C:green}#2# trong #3#{} khả năng ",
-					"bóc chuối thúi và bị huỷ",
+					"bóc chuối thúi và bị tiêu huỷ",
 					"vào cuối vòng",
 				},
 			},
@@ -696,9 +696,9 @@ return {
 				name="Chứng Chỉ",
 				text={
 					"Khi bắt đầu vòng đấu, ",
-					"nhận vĩnh viễn một {C:attention}lá đánh{} ngẫu nhiên",
-					"với một {C:attention}dấu mộc{} ngẫu hiên ",
-					"và đặt nó lên tay",
+					"nhận vĩnh viễn một lá {C:attention}bài đánh{}",
+					"ngẫu nhiên với một {C:attention}dấu mộc{}",
+					"ngẫu hiên và đặt nó lên tay",
 				},
 				unlock={
 					"Sở hữu một lá bài Vàng",
@@ -883,10 +883,10 @@ return {
 			j_faceless={
 				name="Joker Vô Diện",
 				text={
-					"Nhận {C:money}#1#k{} nếu có từ {C:attention}#2#{}",
-					"lá {C:attention}bài hình{}",
-					"được bỏ đi",
-					"cùng lúc",
+					"Nhận {C:money}#1#k{} nếu",
+					"có từ {C:attention}#2#{} lá",
+					"{C:attention}bài hình{} được",
+					"bỏ đi cùng lúc",
 				},
 			},
 			j_family={
@@ -959,14 +959,14 @@ return {
 			j_glass={
 				name="Joker Thuỷ Tinh",
 				text={
-					"Lá này nhận thêm {X:mult,C:white} X#1# {} hệ số nhân",
-					"cho mỗi {C:attention}Bài Kính",
-					"bị vỡ",
+					"Lá này nhận thêm ",
+					"{X:mult,C:white} X#1# {} hệ số nhân cho ",
+					"mỗi {C:attention}Bài Kính bị vỡ",
 					"{C:inactive}(Hiện tại sẽ nhận {X:mult,C:white} X#2# {C:inactive} hệ số nhân)",
 				},
 				unlock={
 					"Sở hữu ít nhất {E:1,C:attention}#1#",
-					"{E:1,C:attention}#2#s{} trong",
+					"{E:1,C:attention}#2#{} trong",
 					"bộ bài",
 				},
 			},
@@ -1006,7 +1006,7 @@ return {
 				text={
 					"Tăng {C:mult}+#1#{} hệ số nhân nhưng",
 					"có {C:green}#2# trong #3#{} khả năng",
-					"bóc chuối thúi và bị huỷ",
+					"bóc chuối thúi và bị tiêu huỷ",
 					"vào cuối vòng",
 				},
 			},
@@ -1072,9 +1072,9 @@ return {
 			j_hologram={
 				name="3 Chiều",
 				text={
-					"Lá này nhận thêm {X:mult,C:white} X#1# {} hệ số nhân",
-					"mỗi khí một lá {C:attention}bài đánh{}",
-					"được thêm vào bộ bài",
+					"Lá này nhận thêm {X:mult,C:white}X#1#{}",
+					"hệ số nhân mỗi khí một lá",
+					"{C:attention}bài đánh{} được thêm vào bộ bài",
 					"{C:inactive}(Hiện tại sẽ nhận {X:mult,C:white} X#2# {C:inactive} hệ số)",
 				},
 			},
@@ -2059,7 +2059,7 @@ return {
 				},
 			},
 			p_buffoon_mega={
-				name="Gói Hề Trúa",
+				name="Gói Hề Chúa",
 				text={
 					"Chọn",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:joker}Joker{}",
@@ -2441,7 +2441,7 @@ return {
 				name="Deja Vu",
 				text={
 					"Đóng {C:red}Mộc Đỏ{}",
-					"và  {C:attention}1{} lá ",
+					"và {C:attention}1{} lá ",
 					"chỉ định trên tay",
 				},
 			},
@@ -2456,8 +2456,8 @@ return {
 			c_familiar={
 				name="Hồn Ma Đồng Hành",
 				text={
-					"Huỷ {C:attention}1{} lá bất kỳ ",
-					"trên tay rồi thêm {C:attention}#1#{} lá ",
+					"Tế {C:attention}1{} lá bất kỳ ",
+					"trên tay để thêm {C:attention}#1#{} lá ",
 					"{C:attention}bài hình được cường hoá",
 					"ngẫu nhiên lên tay",
 				},
@@ -2525,7 +2525,7 @@ return {
 				name="Triệu Hồi Huyền Thoại",
 				text={
 					"Triệu hồi lên tay",
-					"một Jokey {C:legendary,E:1}Huyền Thoại{}",
+					"một Joker {C:legendary,E:1}Huyền Thoại{}",
 					"{C:inactive}(Phải còn chỗ)",
 				},
 			},
@@ -2548,72 +2548,72 @@ return {
 			c_wraith={
 				name="Cơn Thịnh Nộ",
 				text={
-					"Hút sạch toàn bộ {C:money} tiền",
-					"để kéo và nguôi giận",
+					"Hút sạch toàn bộ {C:money}tiền",
+					"để lôi kéo một",
 					"một {C:attention}Joker{} {C:red}Hiếm",
 				},
 			},
 		},
 		Stake={
 			stake_black={
-				name="Black Stake",
+				name="Cọc Đen",
 				text={
-					"Shop can have {C:attention}Eternal{} Jokers",
-					"{C:inactive,s:0.8}(Can't be sold or destroyed)",
-					"{s:0.8}Applies all previous Stakes",
+					"Jokers Shop có thể bán Joker{C:attention}Bất Ly Thân{} ",
+					"{C:inactive,s:0.8}(Không thể bán hoặc tiêu huỷ)",
+					"{s:0.8}Áp dụng luôn tất cả mức cọc bên dưới",
 				},
 			},
 			stake_blue={
-				name="Blue Stake",
+				name="Cọc Xanh Biển",
 				text={
-					"{C:red}-1{} Discard",
-					"{s:0.8}Applies all previous Stakes",
+					"Giảm {C:red}1{} lượt bỏ",
+					"{s:0.8}Áp dụng luôn tất cả mức cọc bên dưới",
 				},
 			},
 			stake_gold={
-				name="Gold Stake",
+				name="Cọc Vàng",
 				text={
-					"Shop can have {C:attention}Rental{} Jokers",
-					"{C:inactive,s:0.8}(Costs {C:money,s:0.8}3k{C:inactive,s:0.8} per round)",
-					"{s:0.8}Applies all previous Stakes",
+					"Jokers Shop có thể bán Joker {C:attention}Thuê{} ",
+					"{C:inactive,s:0.8}(Tốn {C:money,s:0.8}3k{C:inactive,s:0.8} mỗi vòng)",
+					"{s:0.8}Áp dụng luôn tất cả mức cọc bên dưới",
 				},
 			},
 			stake_green={
-				name="Green Stake",
+				name="Cọc Xanh Lá",
 				text={
-					"Required score scales",
-					"faster for each {C:attention}Ante",
-					"{s:0.8}Applies all previous Stakes",
+					"Mức cược cần vượt qua",
+					"tăng nhanh hơn mỗi {C:attention}canh bạc",
+					"{s:0.8}Áp dụng luôn tất cả mức cọc bên dưới",
 				},
 			},
 			stake_orange={
-				name="Orange Stake",
+				name="Cọc Cam",
 				text={
-					"Shop can have {C:attention}Perishable{} Jokers",
-					"{C:inactive,s:0.8}(Debuffed after 5 Rounds)",
-					"{s:0.8}Applies all previous Stakes",
+					"Jokers Shop có thể bán Joker {C:attention}Thoái Hoá Dần{} ",
+					"{C:inactive,s:0.8}(Bị vô hiệu sau 5 vòng)",
+					"{s:0.8}Áp dụng luôn tất cả mức cọc bên dưới",
 				},
 			},
 			stake_purple={
-				name="Purple Stake",
+				name="Cọc Tím",
 				text={
-					"Required score scales",
-					"faster for each {C:attention}Ante",
-					"{s:0.8}Applies all previous Stakes",
+					"Mức cược cần vượt qua",
+					"tăng vượt bậc hơn mỗi {C:attention}canh bạc",
+					"{s:0.8}Áp dụng luôn tất cả mức cọc bên dưới",
 				},
 			},
 			stake_red={
-				name="Red Stake",
+				name="Cọc Đỏ",
 				text={
-					"{C:attention}Small Blind{} gives",
-					"no reward money",
-					"{s:0.8}Applies all previous Stakes",
+					"{C:attention}Cược nhỏ{} không",
+					"còn cho tiền thưởng",
+					"{s:0.8}Áp dụng luôn tất cả mức cọc bên dưới",
 				},
 			},
 			stake_white={
-				name="White Stake",
+				name="Cọc Trắng",
 				text={
-					"Base Difficulty",
+					"Cơ bản",
 				},
 			},
 		},
@@ -2628,52 +2628,52 @@ return {
 			tag_buffoon={
 				name="Nhãn Hề Trúa",
 				text={
-					"Nhận miễn phí một",
-					"{C:attention}Gói Hề Chúa",
+					"Nhận miễn phí",
+					"một {C:attention}Gói Hề Chúa",
 				},
 			},
 			tag_charm={
-				name="Nhãn Quyến Rủ",
+				name="Nhãn Lôi Cuốn",
 				text={
-					"Nhận miễn phí một",
-					"{C:tarot}Gói Siêu Bí Ẩn",
+					"Nhận miễn phí",
+					"một {C:tarot}Gói Siêu Bí Ẩn",
 				},
 			},
 			tag_coupon={
 				name="Nhãn Tri Ân",
 				text={
-					"Tất cả bài và gói tăng cường ",
-					"ban đầu sẽ được miễn phí",
-					"trong cửa hàng tiếp theo",
+					"Tất cả bài và gói tăng",
+					"cường ban đầu sẽ được miễn",
+					"phí trong cửa hàng tiếp theo",
 				},
 			},
 			tag_d_six={
 				name="Nhãn Xúc Sắc Xuất Sắc",
 				text={
-					"Đổi mới bài trong cửa hàng",
-					"tiếp theo bắt đầu với {C:money}0k",
+					"Trong cửa hàng tiếp theo, giá ",
+					"đổi mới bài bắt đầu với {C:money}0k",
 				},
 			},
 			tag_double={
 				name="Nhãn Gấp Đôi Canxi",
 				text={
-					"Nhân đôi {C:attention}Nhãn{}",
-					"tiếp theo ngoại trừ",
-					"{s:0.8,C:attention}Nhãn Gấp Đôi Canxi{s:0.8}",
+					"Nhân đôi {C:attention}nhãn{}",
+					"thu thập tiếp theo",
+					"ngoại trừ {s:0.8,C:attention}Nhãn Gấp Đôi Canxi{s:0.8}",
 				},
 			},
 			tag_economy={
 				name="Nhãn Buộc Tiền",
 				text={
-					"Buộc tiền để gấp đôi",
+					"Buộc dây thun vì muốn tiền gấp đôi",
 					"{C:inactive}(Tối đa {C:money}#1#k{C:inactive})",
 				},
 			},
 			tag_ethereal={
 				name="Nhãn Huyễn Hoặc",
 				text={
-					"Nhẫn miễn phí một",
-					"{C:spectral}Gói Mờ Ảo",
+					"Nhận miễn phí",
+					"một {C:spectral}Gói Mờ Ảo",
 				},
 			},
 			tag_foil={
@@ -2687,8 +2687,8 @@ return {
 			tag_garbage={
 				name="Nhãn Tái Chế",
 				text={
-					"Được trả {C:money}#1#k{} mỗi {C:red}lượt bỏ{} ",
-					"không được sử dụng trong cả trận",
+					"Được trả {C:money}#1#k{} mỗi {C:red}lượt bỏ{} không",
+					"được sử dụng trong cả trận",
 					"{C:inactive}(Hiện tại sẽ nhận {C:money}#2#k{C:inactive})",
 				},
 			},
@@ -2696,7 +2696,7 @@ return {
 				name="Nhãn Tháo Vác",
 				text={
 					"Nhận {C:money}#1#k{} mỗi {C:blue}lượt đánh{}",
-					"được tung ra trong cả vòng",
+					"được tung ra trong cả trận",
 					"{C:inactive}(Hiện tại sẽ nhận {C:money}#2#k{C:inactive})",
 				},
 			},
@@ -2711,9 +2711,9 @@ return {
 			tag_investment={
 				name="Nhãn Đầu Tư",
 				text={
-					"Sau khi hạ gục",
-					"màn cược trùm,",
-					"nhận {C:money}#1#k",
+					"Sau khi hạ",
+					"gục màn cược",
+					"trùm, nhận {C:money}#1#k",
 				},
 			},
 			tag_juggle={
@@ -2756,8 +2756,8 @@ return {
 			tag_rare={
 				name="Nhãn Hiếm",
 				text={
-					"Cửa hàng sẽ cho miễn phí",
-					"một lá Joke {C:red}Hiếm",
+					"Cửa hàng sẽ cho miễn",
+					"phí một lá Joke {C:red}Hiếm",
 				},
 			},
 			tag_skip={
@@ -2771,8 +2771,8 @@ return {
 			tag_standard={
 				name="Nhãn Tiêu Chuẩn",
 				text={
-					"Cửa hàng sẽ cho miễn phí",
-					"một {C:attention}Gói Siêu Tiêu Chuẩn",
+					"Cửa hàng sẽ cho miễn phí một",
+					"{C:attention}Gói Siêu Tiêu Chuẩn",
 				},
 			},
 			tag_top_up={
@@ -2786,12 +2786,12 @@ return {
 			tag_uncommon={
 				name="Nhãn Lạ",
 				text={
-					"Cửa hàng sẽ cho miễn phí",
-					"một lá Joker {C:green}Lạ",
+					"Cửa hàng sẽ cho miễn",
+					"phí một lá Joker {C:green}Lạ",
 				},
 			},
 			tag_voucher={
-				name="Nhãn Khuyến Mãi",
+				name="Nhãn Chứng Nhận",
 				text={
 					"Thêm một {C:voucher}Phiếu Chứng Nhận",
 					"vào cửa hàng tiếp theo",
@@ -3193,7 +3193,7 @@ return {
 				},
 			},
 			v_planet_merchant={
-				name="Thương Nhân TInh Cầu",
+				name="Thương Nhân Tinh Cầu",
 				text={
 					"Thẻ {C:planet}Hành Tinh{} xuất hiện",
 					"gấp {C:attention}#1#{} lần",
@@ -3398,7 +3398,7 @@ return {
 			c_mad_world_1="Thế Giới Điên Loạn",
 			c_medusa_1="Mêđusà",
 			c_monolith_1="Khối Đá Vững Chãi",
-			c_non_perishable_1="Vật Bất Ly Thân",
+			c_non_perishable_1="Không Thể Thoái Hoá",
 			c_omelette_1="Trứng Ốp La",
 			c_rich_1="Nước Chảy Chỗ Trũng",
 			c_typecast_1="Đóng Khung 4 Cạnh",
@@ -3429,7 +3429,7 @@ return {
 		dictionary={
 			["$"]="k",
 			b_FAQ="FAQ",
-			b_and_use="& USE",
+			b_and_use="& SỬ DỤNG",
 			b_back="Quay lại",
 			b_blinds="Mức Cược",
 			b_booster_packs="Gói Tăng Cường",
@@ -3444,7 +3444,7 @@ return {
 			b_create_profile="Tạo người chơi",
 			b_credits="Ghi công",
 			b_current_profile="Người chơi hiện tại",
-			b_customize_deck="Đổi hình cho bộ bài",
+			b_customize_deck="Đổi hình",
 			b_deck="Bộ bài",
 			b_decks="Tổng hợp các bộ bài",
 			b_delete_profile="Xoá người chơi",
@@ -3532,15 +3532,15 @@ return {
 			b_wishlist="Wishlist on Steam",
 			k_aces="Xì",
 			k_achievement="Thành tựu",
-			k_achievements_disabled="Achievements Disabled",
+			k_achievements_disabled="Không còn ghi nhận thành tựu",
 			k_active="active",
-			k_active_ex="Active!",
-			k_again_ex="Again!",
-			k_all_hands="All Hands",
-			k_also_applied="Also applied",
+			k_active_ex="Đang kích hoạt!",
+			k_again_ex="Lại!",
+			k_all_hands="Tất cả lượt đánh",
+			k_also_applied="Còn áp dụng",
 			k_ante="Canh Bạc",
-			k_ante_cap="ANTE",
-			k_arcana_pack="Arcana Pack",
+			k_ante_cap="CANH BẠC",
+			k_arcana_pack="Gói ",
 			k_balanced="Cân bằng",
 			k_banned_cards="Banned Cards",
 			k_banned_tags="Banned Tags",
@@ -3563,7 +3563,7 @@ return {
 			k_daily_run="Daily Run",
 			k_debuffed="Vô hiệu",
 			k_deck="Bộ bài",
-			k_deck_stake_wins="Tổng Cược Vượt Qua",
+			k_deck_stake_wins="Số Mức Cọc Vượt Qua",
 			k_defeated_by="Defeated By",
 			k_demo_version_ex="Demo Version!",
 			k_disabled_ex="Bị vô hiệu!",
@@ -3652,7 +3652,7 @@ return {
 			k_view="Xem",
 			k_voucher="Phiếu chứng nhận",
 			k_vouchers_cap="PHIẾU",
-			k_wins="Bàn Thắng",
+			k_wins="Số Bàn Thắng",
 			k_x_base="X Gốc",
 			ml_bloom_opt={
 				"Tắt",
@@ -3694,7 +3694,7 @@ return {
 			ml_eternal={
 				"Bất Ly Thân",
 				"Không thể bị",
-				"bán hoặc xoá",
+				"bán hoặc tiêu huỷ",
 			},
 			ml_gold_seal_desc={
 				"Gold Seal",
@@ -3813,10 +3813,10 @@ return {
 			gold_seal="Mộc Vàng",
 			holographic="In Ba Chiều",
 			legendary="Huyền Thoại",
-			locked="Locked",
+			locked="Khoá",
 			negative="In Âm Bản",
-			perishable="Perishable",
-			pinned_left="Pinned",
+			perishable="Thoái Hoá Dần",
+			pinned_left="Ghim",
 			planet="Hành Tinh",
 			pluto_planet="Hành Tinh Lùn",
 			polychrome="In Đa Sắc",
