@@ -3,8 +3,9 @@
 ![Progress](https://img.shields.io/badge/progress-60%25-blue)
 
 This guide explains how to add Vietnamese language to the **[Balatro](https://www.playbalatro.com/)** *unofficially*
+
 Hướng dẫn này chỉ cách thêm ngôn ngữ Tiếng Việt vào trò chơi **[Balatro](https://www.playbalatro.com/)** *mình tự dịch :v*
-(Bên dưới soạn bằng tiếng anh, bản tiếng việt có thể xem ở [đây](README-vi.md))
+(Bên dưới soạn bằng tiếng anh, bản tiếng việt có thể xem ở [đây](readme-vi.md))
 
 ## Requirements
 **Balatro** is built on **LÖVE** using **Lua** language. To modify the game, you need to install the following:

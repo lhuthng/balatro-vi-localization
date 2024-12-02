@@ -3,7 +3,7 @@
 ![Hoàn Thiện](https://img.shields.io/badge/HoànThiện-60%25-blue)
 
 Hướng dẫn này chỉ cách thêm ngôn ngữ Tiếng Việt vào trò chơi **[Balatro](https://www.playbalatro.com/)** *tự dịch :v*
-(Quay lại bản tiếng anh ở [đây](README.md))
+(Quay lại bản tiếng anh ở [đây](readme.md))
 
 ## Yêu cầu
 Đối với người dùng Windows, bạn cần có **7-Zip** (Mình đã thử với **WinRAR** và có bước không làm được)
