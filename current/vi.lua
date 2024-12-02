@@ -4,16 +4,16 @@ return {
 			b_abandoned={
 				name="Bộ Bài Bị Lãng Quên",
 				text={
-					"Bắt đầu với bộ bài fsdf sdf ",
+					"Bắt đầu với bộ bài",
 					"thiếu tất cả ",
 					"{C:attention}Bài Hình",
 				},
 			},
 			b_anaglyph={
-				name="Anaglyph Deck",
+				name="Bộ Bài Hình Nổi 3D",
 				text={
-					"After defeating each",
-					"{C:attention}Boss Blind{}, gain a",
+					"Sau khi hạ gục mỗi",
+					"{C:attention}Trùm Cược{}, nhận một",
 					"{C:attention,T:tag_double}#1#",
 				},
 			},
@@ -34,46 +34,46 @@ return {
 				},
 			},
 			b_challenge={
-				name="Challenge Deck",
+				name="Bộ Bài Thách Đấu",
 				text={
 					"",
 				},
 			},
 			b_checkered={
-				name="Checkered Deck",
+				name="Bộ Bài Kẻ Ca Rô",
 				text={
-					"Start run with",
-					"{C:attention}26{C:spades} Spades{} and",
-					"{C:attention}26{C:hearts} Hearts{} in deck",
+					"Bắt đầu với bộ bài với",
+					"{C:attention}26{} con {C:attention}{C:spades} Bích{} and",
+					"{C:attention}26{} con {C:attention}{C:spades} {C:hearts} Cơ{}",
 				},
 			},
 			b_erratic={
-				name="Erratic Deck",
+				name="Bộ Bài Độc Lạ Bình Dương",
 				text={
-					"All {C:attention}Ranks{} and",
-					"{C:attention}Suits{} in deck",
-					"are randomized",
+					"Toàn bộ {C:attention}thứ hạng{} và",
+					"{C:attention}chất{} trong bộ ",
+					"bài được ngẫu nhiên hoá",
 				},
 			},
 			b_ghost={
 				name="Bộ Bài Ma Quái",
 				text={
 					"Các lá {C:spectral}Cô Hồn{} có thể",
-					"xuất hiện trong cửa hàng và",
+					"lảng vảng trong cửa hàng và",
 					"bộ bài bắt đầu với một lá {C:spectral,T:c_hex}Yểm Chú{} card",
 				},
 			},
 			b_green={
-				name="Green Deck",
+				name="Bộ Bài Xanh",
 				text={
-					"At end of each Round:",
-					"{C:money}#1#k{s:0.85} per remaining {C:blue}Hand",
-					"{C:money}#2#k{s:0.85} per remaining {C:red}Discard",
-					"Earn no {C:attention}Interest",
+					"Vào vòng cuối, nhận",
+					"{C:money}#1#k{s:0.85} mỗi {C:blue}Lượt Đánh{} còn lại",
+					"{C:money}#2#k{s:0.85} mỗi {C:red}Lượt Bỏ{} còn lại",
+					"Nhưng không còn nhận {C:attention}lãi xuất",
 				},
 			},
 			b_magic={
-				name="Bộ Ma Thuật",
+				name="Bộ Bài Ma Thuật",
 				text={
 					"Bắt đầu với phiếu",
 					"{C:tarot,T:v_crystal_ball}#1#{} và",
@@ -82,28 +82,28 @@ return {
 				},
 			},
 			b_nebula={
-				name="Nebula Deck",
+				name="Bộ Bài Tinh Vân",
 				text={
-					"Start run with the",
-					"{C:planet,T:v_telescope}#1#{} voucher",
+					"Bắt đầu với ",
+					"phiếu chứng nhận {C:planet,T:v_telescope}#1#{}",
 					"",
-					"{C:red}#2#{} consumable slot",
+					"Nhưng {C:red}#2#{} chỗ thẻ Vận Mệnh",
 				},
 			},
 			b_painted={
-				name="Painted Deck",
+				name="Bộ Bài Tô Vẽ",
 				text={
-					"{C:attention}+#1#{} hand size,",
-					"{C:red}#2#{} Joker slot",
+					"Tăng {C:attention}+#1#{} kích cỡ tay, ",
+					"nhưng {C:red}#2#{} chỗ Joker",
 				},
 			},
 			b_plasma={
-				name="Plasma Deck",
+				name="Bộ Bài Plasma",
 				text={
-					"Balance {C:blue}Chips{} and",
-					"{C:red}Mult{} when calculating",
-					"score for played hand",
-					"{C:red}X#1#{} base Blind size",
+					"Cân bằng số {C:blue}phỉnh{} và",
+					"{C:red}hệ số nhân{} khi tính ",
+					"điểm cho tay đánh",
+					"{C:red}X#1#{} Mức Cược cơ bản",
 				},
 			},
 			b_red={
@@ -492,7 +492,7 @@ return {
 				name="Nhà Thiên Văn Học",
 				text={
 					"Tất cả lá {C:planet}Hành Tinh{} và",
-					"{C:planet}Gói Thiên Văn{} ",
+					"{C:planet}Gói Thiên Hà{} ",
 					"trong cửa hàng được phát {C:attention}miễn phí",
 				},
 				unlock={
@@ -3146,21 +3146,21 @@ return {
 				},
 			},
 			v_overstock_norm={
-				name="Overstock",
+				name="Hàng Tồn Kho",
 				text={
-					"{C:attention}+1{} card slot",
-					"available in shop",
+					"{C:attention}+1{} chỗ bán bài",
+					"trong cửa hàng",
 				},
 			},
 			v_overstock_plus={
-				name="Overstock Plus",
+				name="Hàng Tồn Kho Đặc Biệt",
 				text={
-					"{C:attention}+1{} card slot",
-					"available in shop",
+					"{C:attention}+1{} chỗ bán bài",
+					"trong cửa hàng",
 				},
 				unlock={
-					"Spend a total of",
-					"{C:money}#1#k{} at the shop",
+					"Tiêu tổng cộng",
+					"{C:money}#1#k{} trong của hàng",
 					"{C:inactive}(#2#k)",
 				},
 			},
@@ -3193,11 +3193,11 @@ return {
 				},
 			},
 			v_planet_merchant={
-				name="Planet Merchant",
+				name="Thương Nhân TInh Cầu",
 				text={
-					"{C:planet}Planet{} cards appear",
-					"{C:attention}#1#X{} more frequently",
-					"in the shop",
+					"Thẻ {C:planet}Hành Tinh{} xuất hiện",
+					"gấp {C:attention}#1#{} lần",
+					"trong cửa hàng",
 				},
 			},
 			v_planet_tycoon={
@@ -3269,7 +3269,7 @@ return {
 			v_tarot_merchant={
 				name="Thương Nhân Chiêm Tinh",
 				text={
-					"The {C:tarot}Tarot{} xuất hiện",
+					"Thẻ {C:tarot}Tarot{} xuất hiện",
 					"gấp {C:attention}#1#{} lần",
 					"trong cửa hàng",
 				},
@@ -3289,12 +3289,12 @@ return {
 				},
 			},
 			v_telescope={
-				name="Telescope",
+				name="Kính Thiên Văn",
 				text={
-					"{C:attention}Celestial Packs{} always",
-					"contain the {C:planet}Planet{}",
-					"card for your most",
-					"played {C:attention}poker hand",
+					"Mọi {C:attention}Gói Thiên Hà{} luân",
+					"bao gồm lá {C:planet}Hành Tinh{}",
+					"ứng với {C:attention}tay bài{} ",
+					"chơi nhiêu nhất cả trận",
 				},
 			},
 			v_wasteful={
@@ -3602,7 +3602,7 @@ return {
 			k_no_reward="Không có phần thường",
 			k_no_room_ex="Hết Chỗ!",
 			k_no_space_ex="Hết Chỗ!",
-			k_none="Hông :)",
+			k_none="Không có",
 			k_nope_ex="Hông =))",
 			k_not_allowed_ex="Không Chấp Nhận!",
 			k_not_discovered="Chưa Được Khám Phá",
