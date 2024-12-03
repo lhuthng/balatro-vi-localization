@@ -2410,15 +2410,15 @@ return {
 				text={
 					"Nhân đôi một tấm {C:attention}Joker{} ",
 					"bất kỳ, nhưng hy sinh ",
-					"toàn bộ các lá Joker khác",
+					"toàn bộ lá Joker khác",
 				},
 			},
 			c_aura={
 				name="Hào Quang",
 				text={
-					"Gắn thêm phiên bản {C:dark_edition}In Nổi{}, ",
-					"{C:dark_edition}In Ba Chiều{}, hoặc {C:dark_edition}In Đa sắc{}",
-					"vào {C:attention}1{} lá chỉ định trên tay",
+					"Đổi phiên bản của {C:attention}1{} lá",
+					"chỉ định trên tay thành ",
+					"{C:dark_edition}In Nổi{}, {C:dark_edition}In Ba Chiều{}, hoặc {C:dark_edition}In Đa sắc{}",
 				},
 			},
 			c_black_hole={
@@ -2448,9 +2448,9 @@ return {
 			c_ectoplasm={
 				name="Vật Chất Huyền Bí",
 				text={
-					"Gắn phiên bản {C:dark_edition}In Âm Bản{} vào",
-					"một {C:attention}Joker bất kỳ,",
-					"đồng thời giảm {C:red}#1#{} kích cỡ tay",
+					"Đổi phiên bản của một {C:attention}Joker{}",
+					"bất kỳ thành {C:dark_edition}In Đa Sắc{} đồng",
+					"thời giảm kích cỡ tay đi {C:red}#1#{}",
 				},
 			},
 			c_familiar={
@@ -2465,10 +2465,10 @@ return {
 			c_grim={
 				name="Giao Dịch Bóng Đêm",
 				text={
-					"Đổi {C:attention}1{} lá ngẫu nhiên",
-					"trên tay với ",
-					"{C:attention}#1# con Xì Cường Hoá",
-					"",
+					"Đổi {C:attention}1{} lá ",
+					"ngẫu nhiên trên ",
+					"tay với {C:attention}#1#{} con ",
+					"{C:attention}Xì Cường Hoá",
 				},
 			},
 			c_hex={
@@ -2509,8 +2509,8 @@ return {
 				text={
 					"Đổi thứ hạng của toàn bộ",
 					"bài trên tay thành một",
-					"{C:attention}thứ hạng{} ngẫu nhiên,",
-					"nhưng giảm {C:red}1{} kích cỡ tay",
+					"{C:attention}thứ hạng{} ngẫu nhiên",
+					"nhưng giảm kích cỡ tay đi {C:red}1{} ",
 				},
 			},
 			c_sigil={
@@ -2548,8 +2548,8 @@ return {
 			c_wraith={
 				name="Cơn Thịnh Nộ",
 				text={
-					"Hút sạch toàn bộ {C:money}tiền",
-					"để lôi kéo một",
+					"Hút sạch toàn bộ",
+					"{C:money}tiền{} để lôi kéo một",
 					"một {C:attention}Joker{} {C:red}Hiếm",
 				},
 			},
@@ -2800,43 +2800,43 @@ return {
 		},
 		Tarot={
 			c_chariot={
-				name="The Chariot",
+				name="Chiến Xa",
 				text={
-					"Enhances {C:attention}#1#{} selected",
-					"card into a",
+					"Cường hoá {C:attention}#1#{} lá ",
+					"chỉ định thành",
 					"{C:attention}#2#",
 				},
 			},
 			c_death={
-				name="Death",
+				name="Thay Đổi",
 				text={
-					"Select {C:attention}#1#{} cards,",
-					"convert the {C:attention}left{} card",
-					"into the {C:attention}right{} card",
-					"{C:inactive}(Drag to rearrange)",
+					"Chọn {C:attention}#1#{} lá và",
+					"chuyển đổi lá bên {C:attention}trái{} ",
+					"thành lá bên {C:attention}phải{}",
+					"(Kéo bài để sắp xếp vị trí)",
 				},
 			},
 			c_devil={
-				name="The Devil",
+				name="Quỷ Cám Dỗ",
 				text={
-					"Enhances {C:attention}#1#{} selected",
-					"card into a",
+					"Cường hoá {C:attention}#1#{} lá ",
+					"chỉ định thành",
 					"{C:attention}#2#",
 				},
 			},
 			c_emperor={
-				name="The Emperor",
+				name="Hoàng Đế",
 				text={
-					"Creates up to {C:attention}#1#",
-					"random {C:tarot}Tarot{} cards",
-					"{C:inactive}(Must have room)",
+					"Tạo {C:attention}#1#{} lá",
+					"{C:tarot}Vận Mệnh{} ngẫu nhiên",
+					"{C:inactive}(Phải còn chỗ)",
 				},
 			},
 			c_empress={
-				name="The Empress",
+				name="Hoàng Hậu",
 				text={
-					"Enhances {C:attention}#1#",
-					"selected cards to",
+					"Cường hoá {C:attention}#1# lá",
+					"chỉ định thành",
 					"{C:attention}#2#s",
 				},
 			},
@@ -2846,7 +2846,7 @@ return {
 					"Tái tạo lá",
 					"{C:tarot}Vận Mệnh{} hoặc {C:planet}Hành Tinh{}",
 					"cuối cùng được sử dụng",
-					"ngoại trừ lá {s:0.8,C:tarot}Thằng Hề{s:0.8} như lá này",
+					"ngoại trừ lá {s:0.8,C:tarot}Thằng Hề{s:0.8}",
 				},
 			},
 			c_hanged_man={
@@ -2861,7 +2861,7 @@ return {
 				text={
 					"Chọn và cường hoá {C:attention}#1#",
 					"lá bài trên tay thành",
-					"{C:attention}#2#s",
+					"{C:attention}#2#",
 				},
 			},
 			c_hermit={
@@ -2874,8 +2874,8 @@ return {
 			c_high_priestess={
 				name="Nữ Tư Tế Cao Cấp",
 				text={
-					"Tạo lên tới {C:attention}#1#",
-					"lá {C:planet}Hành Tinh{} ngẫu nhiên",
+					"Tạo {C:attention}#1#{} lá",
+					"{C:planet}Hành Tinh{} ngẫu nhiên",
 					"{C:inactive}(Phải còn chỗ)",
 				},
 			},
@@ -2908,7 +2908,7 @@ return {
 				text={
 					"Chọn và cường hoá {C:attention}#1#{}",
 					"lá bài thành",
-					"{C:attention}#2#s",
+					"{C:attention}#2#",
 				},
 			},
 			c_moon={
