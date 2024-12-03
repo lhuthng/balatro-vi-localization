@@ -132,10 +132,10 @@ return {
 		},
 		Blind={
 			bl_arm={
-				name="The Arm",
+				name="Cánh Tay",
 				text={
-					"Decrease level of",
-					"played poker hand",
+					"Giáng cấp của",
+					"tay bài được chơi",
 				},
 			},
 			bl_big={
@@ -148,7 +148,7 @@ return {
 			bl_club={
 				name="Chuồn Chuồn",
 				text={
-					"Mọi con Chuồn",
+					"Tất cả lá {C:club}Chuồn",
 					"đều bị vô hiệu",
 				},
 			},
@@ -174,125 +174,125 @@ return {
 				},
 			},
 			bl_final_heart={
-				name="Trái Tim Đỏ Thẩm",
+				name="Quả Tim Đỏ Máu",
 				text={
 					"Một Joker bất kỳ bị vô hiệu hoá,",
 					"đổi mỗi lượt đánh tung ra",
 				},
 			},
 			bl_final_leaf={
-				name="Lá Cây Xanh Rờn",
+				name="Lá Cây Xanh Tươi",
 				text={
 					"Tất cả bài đều bị vô hiệu hoá",
 					"cho tới khi ",
 				},
 			},
 			bl_final_vessel={
-				name="Chai Đựng Tím Lịm",
+				name="Cốc Nước Tím Lịm",
 				text={
 					"Very large blind",
 				},
 			},
 			bl_fish={
-				name="The Fish",
+				name="Con Cá",
 				text={
-					"Cards drawn face down",
-					"after each hand played",
+					"Sau mỗi lượt đánh,",
+					"bài rút được úp lại",
 				},
 			},
 			bl_flint={
-				name="The Flint",
+				name="Đá Lửa",
 				text={
-					"Base Chips and",
-					"Mult are halved",
+					"Mọi tay bài khi đánh bị đốt một",
+					"nửa số phỉnh và hệ số nhân cơ bản",
 				},
 			},
 			bl_goad={
-				name="The Goad",
+				name="Gậy Thúc",
 				text={
-					"All Spade cards",
-					"are debuffed",
+					"Tất cả lá {C:spades}Bích",
+					"đều bị vô hiệu",
 				},
 			},
 			bl_head={
-				name="The Head",
+				name="Đầu Xỏ",
 				text={
-					"All Heart cards",
-					"are debuffed",
+					"Tất cả lá {C:heart}Cơ",
+					"đều bị vô hiệu",
 				},
 			},
 			bl_hook={
-				name="The Hook",
+				name="Móc Câu",
 				text={
-					"Discards 2 random",
-					"cards per hand played",
+					"Móc theo 2 lá xuống",
+					"mỗi lượt đánh sử dụng",
 				},
 			},
 			bl_house={
-				name="The House",
+				name="Căn Nhà",
 				text={
-					"First hand is",
-					"drawn face down",
+					"Tất cả bài mở",
+					"đầu đều được rút úp",
 				},
 			},
 			bl_manacle={
-				name="The Manacle",
+				name="Còng Tay",
 				text={
-					"-1 Hand Size",
+					"Giảm 1 kích cỡ tay",
 				},
 			},
 			bl_mark={
-				name="The Mark",
+				name="Mục Tiêu",
 				text={
-					"All face cards are",
-					"drawn face down",
+					"Tất cả bài hình",
+					"đều được rút úp",
 				},
 			},
 			bl_mouth={
-				name="The Mouth",
+				name="Độc Miệng",
 				text={
-					"Play only 1 hand",
-					"type this round",
+					"Chỉ được đánh duy nhất",
+					"một tay bài vòng này",
 				},
 			},
 			bl_needle={
-				name="The Needle",
+				name="Kim Chỉ",
 				text={
-					"Play only 1 hand",
+					"Chỉ được đánh 1 lượt",
 				},
 			},
 			bl_ox={
-				name="The Ox",
+				name="Trâu Buộc",
 				text={
-					"Playing a #1#",
-					"sets money to 0k",
+					"Nếu đánh #1#",
+					"sẽ mất hết tiền",
 				},
 			},
 			bl_pillar={
-				name="The Pillar",
+				name="Trụ Cột",
 				text={
-					"Cards played previously",
-					"this Ante are debuffed",
+					"Tất cả bài được dùng trong",
+					"canh bạc này đều bị vô hiệu hoá",
 				},
 			},
 			bl_plant={
-				name="The Plant",
+				name="Thực Vật",
 				text={
-					"All face cards",
-					"are debuffed",
+					"Tất cả bài hình",
+					"đều bị vô hiệu hoá",
 				},
 			},
 			bl_psychic={
-				name="The Psychic",
+				name="Siêu Linh",
 				text={
-					"Must play 5 cards",
+					"Phải đánh 5 lá",
 				},
 			},
 			bl_serpent={
-				name="The Serpent",
+				name="Rắn Quỷ",
 				text={
-					"After Play or Discard,",
-					"always draw 3 cards",
+					"Sau lượt đánh hoặc bỏ",
+					"đều chỉ lấy thêm 3 lá",
 				},
 			},
 			bl_small={
@@ -303,37 +303,37 @@ return {
 				},
 			},
 			bl_tooth={
-				name="The Tooth",
+				name="Răng Khôn",
 				text={
-					"Lose 1k per",
-					"card played",
+					"Mất 1k mỗi",
+					"lá được đánh",
 				},
 			},
 			bl_wall={
-				name="The Wall",
+				name="Vạn Lý Trường Thành",
 				text={
-					"Extra large blind",
+					"Mức cược cực kỳ cao",
 				},
 			},
 			bl_water={
-				name="The Water",
+				name="Nước Trong",
 				text={
-					"Start with",
-					"0 discards",
+					"Bắt đầu",
+					"với 0 lượt bỏ",
 				},
 			},
 			bl_wheel={
-				name="The Wheel",
+				name="Vòng Quay May Rủi",
 				text={
-					" in 7 cards get",
-					"drawn face down",
+					" trong 7 khả năng",
+					"bài rút bị úp xuống",
 				},
 			},
 			bl_window={
-				name="The Window",
+				name="Cửa Sổ",
 				text={
-					"All Diamond cards",
-					"are debuffed",
+					"Tất cả lá {C:diamon}Rô",
+					"đều bị vô hiệu",
 				},
 			},
 		},
@@ -3427,7 +3427,7 @@ return {
 			},
 		},
 		dictionary={
-			["$"]="k",
+			["$"]="$",
 			b_FAQ="FAQ",
 			b_and_use="& SỬ DỤNG",
 			b_back="Quay lại",
@@ -3544,7 +3544,7 @@ return {
 			k_balanced="Cân bằng",
 			k_banned_cards="Banned Cards",
 			k_banned_tags="Banned Tags",
-			k_base_cap="BASE",
+			k_base_cap="Gốc",
 			k_base_cards="Base Cards",
 			k_best_hand="Tay tốt nhất",
 			k_booster="Tăng Cường",
@@ -3767,7 +3767,7 @@ return {
 			ph_display_stickers="Hiển thị Tem Cọc trong lúc chơi",
 			ph_game_over="THUA :(",
 			ph_improve_run="Improve your run!",
-			ph_most_played="(most played hand)",
+			ph_most_played="(tay bài chơi nhiều nhất)",
 			ph_mr_bones="Saved by Mr. Bones",
 			ph_no_boss_active="no boss active",
 			ph_no_vouchers="No vouchers redeemed this run",
