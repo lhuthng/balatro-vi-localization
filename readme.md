@@ -1,6 +1,6 @@
 # Vietnamese Localization for Balatro
 
-![Progress](https://img.shields.io/badge/progress-60%25-blue)
+![Progress](https://img.shields.io/badge/progress-80%25-blue)
 
 This guide explains how to add Vietnamese language to the **[Balatro](https://www.playbalatro.com/)** *unofficially*
 
