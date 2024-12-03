@@ -15,7 +15,7 @@ Hướng dẫn này chỉ cách thêm ngôn ngữ Tiếng Việt vào trò chơi
 - ~~**LÖVE**~~
 - **7-Zip**: (Windows only, **WinRAR** doesn't work) for openning **LÖVE** executables
 ## Finding Balatro Source Codes
-Reverse-engineering a **LÖVE** project is simple. The executables are essentially an archive containing the game files.
+Reverse-engineering a **LÖVE** project is simple. Its executable is essentially an archive containing the game files.
 - **MacOS**: 
   - Locate the executable file
   - Right-click on it
@@ -34,7 +34,7 @@ Reverse-engineering a **LÖVE** project is simple. The executables are essential
 ## Adding Vietnamese
 
 ### Adding Font
-Although I really love the font used in the game, it doesn't support Vietnamese characters. To address this, I’ve modified font file to support for Vietnamese characters.
+Although I really love the font used in the game, it doesn't support Vietnamese characters. To address this, I’ve modified the font to support for Vietnamese characters.
 
 The extended font can be found [here](./fonts/m6x11plus_vi.ttf). Download and place it in **/resources/fonts/**.
 
