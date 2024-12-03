@@ -1,6 +1,8 @@
 # Việt Hoá cho Balatro
 
-![Hoàn Thiện](https://img.shields.io/badge/HoànThiện-60%25-blue)
+![Demo](images/demo.png)
+
+![Hoàn Thiện](https://img.shields.io/badge/HoànThiện-80%25-blue)
 
 Hướng dẫn này chỉ cách thêm ngôn ngữ Tiếng Việt vào trò chơi **[Balatro](https://www.playbalatro.com/)** *tự dịch :v*
 (Quay lại bản tiếng anh ở [đây](readme.md))
@@ -28,7 +30,7 @@ Tìm mã nguồn cho game chạy trên **LÖVE** khá là đơn giản. **LÖVE*
 ## Thêm Tiếng Việt
 
 ### Thêm Phông Chữ
-Phông chữ mặc định của game khá là hợp nên mình không muốn thay thế nó. Mình vẽ thêm mấy ký tự tiếng việt và lưu lại với file khác. File đó đây [đây](./fonts/m6x11plus_vi.ttf). Tải file đó và để nó vào **/resources/fonts/**.
+Phông chữ mặc định của game khá là hợp nên mình không muốn thay thế nó. Mình vẽ thêm mấy ký tự tiếng việt và lưu lại ở [đây](./fonts/m6x11plus_vi.ttf). Tải file đó và để nó vào **/resources/fonts/**.
 
 ### Thêm Bản Dịch
 
@@ -38,12 +40,12 @@ Bản dịch việt hoá mình dịch lại ở [đây](./current/vi.lua). Tải
 - Tìm khai báo biến `self.LANGUAGES` (đâu đó dòng 942).
 - Chèn thêm đoạn mã sau vào cuối khai báo biến đó (đâu đó dòng 959):
     ```lua
-    ['vi'] = {font = 10, label = "Tiếng Việt", key = 'vi', button = "Phản hồi ngôn ngữ", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},
+    ['vi'] = {font = 10, label = "Tiếng Việt", key = 'vi', beta = true, button = "Phản hồi ngôn ngữ", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},
     ```
     Sau khi chèn xong thì nó nhìn giống giống vầy
     ```lua
         ['all2'] = {font = 9, label = "English", key = 'all', omit = true},
-        ['vi'] = {font = 10, label = "Tiếng Việt", key = 'vi', button = "Phản hồi ngôn ngữ", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},
+        ['vi'] = {font = 10, label = "Tiếng Việt", key = 'vi', beta = true, button = "Phản hồi ngôn ngữ", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},
     }
     ```
 - Tìm tiếp khai báo biến `self.FONTS` (đâu đó dòng 969).

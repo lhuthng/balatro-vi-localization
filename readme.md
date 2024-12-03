@@ -1,5 +1,7 @@
 # Vietnamese Localization for Balatro
 
+![Demo](images/demo.png)
+
 ![Progress](https://img.shields.io/badge/progress-80%25-blue)
 
 This guide explains how to add Vietnamese language to the **[Balatro](https://www.playbalatro.com/)** *unofficially*
@@ -32,7 +34,7 @@ Reverse-engineering a **LÖVE** project is simple. The executables are essential
 ## Adding Vietnamese
 
 ### Adding Font
-While I love the font used in the game, it does not support Vietnamese characters. I have added Vietnamese characters as a new font file.
+Although I really love the font used in the game, it doesn't support Vietnamese characters. To address this, I’ve modified font file to support for Vietnamese characters.
 
 The extended font can be found [here](./fonts/m6x11plus_vi.ttf). Download and place it in **/resources/fonts/**.
 
@@ -44,12 +46,12 @@ To use the extended font and the vietnamese localization, update the script `gam
 - Search for the `self.LANGUAGES` declaration (arround line 942).
 - Append the following line to the end of the table (around line 959):
     ```lua
-    ['vi'] = {font = 10, label = "Tiếng Việt", key = 'vi', button = "Phản hồi ngôn ngữ", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},
+    ['vi'] = {font = 10, label = "Tiếng Việt", key = 'vi', beta = true, button = "Phản hồi ngôn ngữ", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},
     ```
     It should be like this after appended
     ```lua
         ['all2'] = {font = 9, label = "English", key = 'all', omit = true},
-        ['vi'] = {font = 10, label = "Tiếng Việt", key = 'vi', button = "Phản hồi ngôn ngữ", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},
+        ['vi'] = {font = 10, label = "Tiếng Việt", key = 'vi', beta = true, button = "Phản hồi ngôn ngữ", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},
     }
     ```
 - Search for the `self.FONTS` declaration (arround line 969).
