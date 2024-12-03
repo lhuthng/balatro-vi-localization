@@ -9,6 +9,7 @@
             border: 1px solid black;
             margin: 5px;
             padding: 5px;
+            background-color: white;
         }
         .textContainer {
             margin: 5px;
@@ -28,7 +29,8 @@
             margin: 0;
         }
         .styledButton {
-            border: none;
+            border: 1px solid black;
+            background-color: white;
         }
         .wait {
             background: pink;
@@ -45,14 +47,21 @@
             flex-direction: column;
             top: 10px;
             right: 10px;
-            gap: 5px;   
-            div {
-                position: relative;
-                background-color: #f1f1f1;
-                padding: 20px;
-                border: 1px solid #ccc;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
+            gap: 5px;
+        }
+        .floatingContainer {
+            position: relative;
+            background-color: #f1f1f1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .focus {
+            background-color: Gainsboro;
+        }
+        #quickNavigator {
+            display: flex;
+            flex-direction: column;
         }
         #replacementTool {
             div {
@@ -68,13 +77,13 @@
 <body>
     <div id="mainContainer"></div>
     <div id="floating">
-        <div id="loadingBox">
-            <input type="file" id="fileInput" class="styledButton" accept="application/json" />
+        <div id="loadingBox" class="floatingContainer">
+            <input type="file" id="fileInput" accept="application/json" />
             <button id="saveButton1" class="styledButton" onClick="save()" disabled>Save</button>
             <button id="saveButton2" class="styledButton" onClick="saveAsLua()" disabled>Save as Lua file</button>
             <button id="updateAllButton" class="styledButton" onclick="updateAll()" disabled>Update ALL!</button>
         </div>
-        <div id="replacementTool">
+        <div id="replacementTool" class="floatingContainer">
             <div>
                 <h2>Text Replacement Tool</h2>
                 <label for="useRegExp">
@@ -87,6 +96,7 @@
             <input type="text" id="replaceText" placeholder=""><br><br>        
             <button onclick="replace()">Apply</button>
         </div>
+        <div id="quickNavigator" class="floatingContainer"></div>
     </div>
     
     <script src="script.js"></script>

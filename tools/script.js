@@ -1,7 +1,37 @@
 const file_input = document.getElementById('fileInput');
 const update_all_button = document.getElementById('updateAllButton');
-let buttons = [];
-let inputs = []
+const quick_navigator = document.getElementById('quickNavigator');
+const main_container = document.getElementById("mainContainer");
+let current_target;
+let buttons;
+let inputs;
+let nav_location = {
+    '.descriptions.Joker': 'Joker',
+    '.descriptions.Tarot': 'Tarot',
+    '.descriptions.Planet': 'Planet',
+    '.descriptions.Spectral': 'Spectral',
+    '.descriptions.Enhanced': 'Enhanced',
+    '.descriptions.Edition': 'Edition',
+    '.descriptions.Stake': 'Planet',
+    '.descriptions.Blind': 'Blind',
+    '.descriptions.Tag': 'Tag',
+    '.descriptions.Stake': 'Stake',
+    '.descriptions.Voucher': 'Voucher',
+    '.descriptions.Back': 'Deck',
+    '.descriptions.Other': 'Other(Sticker, Seal, etc.)',
+    '.misc': 'Misc',
+};
+
+function init() {
+    current_target = undefined;
+    buttons = [];
+    inputs = [];
+    main_container.innerHTML = '';
+    quick_navigator.innerHTML = '';
+    document.getElementById("saveButton1").disabled = false;
+    document.getElementById("saveButton2").disabled = false;
+    update_all_button.disabled = false;
+}
 
 file_input.addEventListener('change', event => {
     const file = event.target.files[0];
@@ -12,20 +42,19 @@ file_input.addEventListener('change', event => {
         if (file.type === 'application/json') {
             const reader = new FileReader();
             reader.onload = e => {
-                try {
-                    buttons = [];
-                    inputs = [];
-                    const main_container = document.getElementById("mainContainer");
-                    main_container.innerHTML = '';
-                    data = JSON.parse(e.target.result);
-                    console.log("Parsed.");
-                    show(data, main_container);
-                    document.getElementById("saveButton1").disabled = false;
-                    document.getElementById("saveButton2").disabled = false;
-                    update_all_button.disabled = false;
-                } catch (err) {
-                    alert("Parsing error!");
-                }
+                init();
+                data = JSON.parse(e.target.result);
+                show(data, main_container);
+                quick_navigator.querySelectorAll('*').forEach(a => {
+                    a.addEventListener('click', e => {
+                        e.preventDefault();
+                        const target = document.getElementById(a.textContent);
+                        target.scrollIntoView({ behavior: "smooth" });
+                        if (current_target) current_target.classList.remove('focus');
+                        current_target = target;
+                        target.classList.add('focus');
+                    });
+                });
             };
             reader.readAsText(file);
         }
@@ -61,6 +90,12 @@ function show(object, container, path) {
     else if (typeof object === "object") {
         const sub_container = document.createElement("div");
         container.appendChild(sub_container);
+        if (nav_location.hasOwnProperty(path)) {
+            const a = document.createElement('a');
+            a.textContent = nav_location[path];
+            quick_navigator.appendChild(a);
+            sub_container.id = nav_location[path];
+        }
         show_object(object, sub_container, path);
     }
 }
