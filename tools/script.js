@@ -178,7 +178,7 @@ function save() {
 function saveAsLua() {
     function convertToLua(object, tab_count=0) {
         let result = "";
-        if (typeof object === "string") result = `"${object}"`;
+        if (typeof object === "string") result = `"${object}"`.replace(/\\/g, "\\\\");
         else {
             result = "{\n";
             const tab = "\t";

@@ -3375,7 +3375,7 @@
       "b_set_gamespeed": "Tốc Độ",
       "b_set_vibration": "Rung",
       "b_create_profile": "Tạo người chơi",
-      "ph_score_new_collection": "Số Khám Phá Mới",
+      "ph_score_new_collection": "Số khám phá mới",
       "k_plus_joker": "+1 lá Joker",
       "b_next_round_1": "Rời",
       "b_stat_planets": "Hành tinh",
@@ -3449,7 +3449,7 @@
         "Sử Dụng"
       ],
       "ph_you_win_demo": "BẠN THẮNG BẢN THỬ RỒI!",
-      "k_nope_ex": "Hông =))",
+      "k_nope_ex": "Hông ( ͡° ͜ʖ ͡°)",
       "k_unknown": "?? :D ??",
       "b_set_CRT": "CRT (Hiệu ứng như tivi cũ)",
       "b_music": "Nhạc",
@@ -3496,7 +3496,7 @@
       "b_delete_profile": "Xoá người chơi",
       "b_full_deck": "Đủ bộ",
       "b_reset_profile": "Bắt đầu lại",
-      "k_deck_stake_wins": "Số Mức Cọc Vượt Qua",
+      "k_deck_stake_wins": "Mức Cọc Vượt Qua",
       "b_options": "Tuỳ chỉnh",
       "k_progress": "Quá trình",
       "ml_windowmode_opt": [
@@ -3708,7 +3708,7 @@
       "k_arcana_pack": "Gói chiêm tinh",
       "b_back": "Quay lại",
       "b_endless": "Chơi tiếp",
-      "k_ante": "Canh Bạc",
+      "k_ante": "Canh bac",
       "k_achievements_disabled": "Không còn ghi nhận thành tựu",
       "ph_4_7_of_clubs": "bốn 7 chuồng",
       "ml_play_discard_pos_opt": [
@@ -4228,84 +4228,84 @@
     },
     "quips": {
       "lq_8": [
-        "Tao mà có tay tao",
-        "đã che mắt khỏi cái",
-        "thành tích tệ hại này"
+        "Tao mà có tay tao đã che ",
+        "mắt khỏi cái thành tích tệ hại này",
+        "         (￣ ¨ヽ￣)"
       ],
       "lq_2": [
         "Và chúng ta đã úp bài",
-        "một cách ướt Át"
+        "một cách ướt Át (T_T)"
       ],
       "wq_7": [
-        "Hên quá, tao",
-        "không cược ",
-        "mày thua :') "
+        "Hên quá, tao đã ",
+        "không cược mày thua",
+        "     ¯\\_(ツ)_/¯"
       ],
       "dq_1": [
         "Chà, tao nghĩ mày",
         "còn nhiều trò hay ",
         "hơn để qua được thử ",
-        "thách cuối cùng này!"
+        "thách cuối cùng này! ( ˘⌣˘)"
       ],
       "lq_10": [
-        "Thua ê chề vậy chế . _ ."
+        "Thua ê chề vậy chế (. _ . )"
       ],
       "wq_2": [
-        "Mượt như là",
-        "Sunsilk luôn!"
+        "Mượt như Sunsilk luôn!",
+        "       ( ˘⌣˘)"
       ],
       "lq_7": [
-        "Rồi, chúng ta đã thành ",
-        "trò cười cho thiên hạ"
+        "Rồi, chúng ta đã thành trò ",
+        "cười cho thiên hạ ┐(‘～` )┌"
       ],
       "lq_1": [
         "Chắc mình chơi",
         "bài cào cho dễ",
-        "quá ta (:"
+        "quá ta ( ͡  ͜ʖ ͡ )"
       ],
       "wq_6": [
-        "Nước đi ",
-        "hay đếy"
+        "Nước đi hay đếy",
+        "    ♡(>ᴗ•)°"
       ],
       "lq_4": [
-        "Mày biết đó,",
-        "nhà cái lúc nào",
-        "cũng thắng :$"
+        "Mày biết đó, nhà",
+        "cái lúc nào chả thắng",
+        "  ┐(‘～` )┌"
       ],
       "wq_1": [
-        "Đánh Át quá zậy!"
+        "Đánh Át quá zậy! ♡(>ᴗ•)°"
       ],
       "lq_6": [
-        "Ủa, giả ngu",
-        "hay gì?"
+        "Ủa, giả ngu à?",
+        " _(:3 」∠)_"
       ],
       "wq_4": [
-        "Quá buồn, số",
-        "phỉnh này chỉ",
-        "là ảo ..."
+        "Quá buồn, số phỉnh",
+        "này chỉ là ảo",
+        "(─‿‿─)"
       ],
       "wq_5": [
-        "Đúng là con ",
-        "trai của ta!!"
+        "Đúng là con trai của ta!!",
+        "         <(¯⌣¯)>"
       ],
       "lq_5": [
-        "Coi ai mới",
-        "là gã hề ở",
-        "đây nào :^)"
+        "Coi ai mới là",
+        "gã hề ở đây nào",
+        "   (x ͜x)"
       ],
       "lq_3": [
-        "Thua hoài vậy,",
-        "xào bài cũng",
-        "mõi tay nha!"
+        "Thua hoài vậy, xào bài ",
+        "cũng mõi tay nha!",
+        "   ∠( ᐛ 」∠)_"
       ],
       "wq_3": [
         "Đù, tao tưởng mày đùa",
-        "khi nói bài mày mạnh!!"
+        "khi nói bài mày mạnh!! ( ˘▽˘)っ'"
       ],
       "lq_9": [
-        "Tao Hề thiệt,",
-        "sao mày hề",
-        "hơn tao nữa vậy?"
+        "Tao tưởng chỉ có mình",
+        "tao là chú hề chứ",
+        "     ( ͡° ͜ʖ ͡°)"
       ]
     }
   }
