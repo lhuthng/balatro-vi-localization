@@ -168,7 +168,7 @@ function update_data(button, path, input, limited) {
 }
 
 function save() {
-    const blob = new Blob([JSON.stringify(data)])
+    const blob = new Blob([JSON.stringify(data, null, 2)])
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob, { type: "application/json" });
     a.download = 'lang.json';
