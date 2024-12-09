@@ -1384,7 +1384,7 @@ return {
 				text={
 					"Lá này tăng {C:red}+#1#{} hệ ",
 					"số nhân khi bỏ qua",
-					"bất kì {C:attention}Gói Nâng Cấp{} nào",
+					"bất kì {C:attention}Gói Tăng Cường{} nào",
 					"{C:inactive}(Hiện tại sẽ tăng {C:red}+#2#{C:inactive} hệ số)",
 				},
 			},
@@ -2009,7 +2009,7 @@ return {
 				name="Khoá",
 				text={
 					"Tìm Joker này",
-					"từ gói lá {C:spectral}Triệu Hồi Huyền Thoại{}",
+					"từ lá {C:spectral}Triệu Hồi Huyền Thoại{}",
 				},
 			},
 			locked={
@@ -2028,7 +2028,7 @@ return {
 				},
 			},
 			p_arcana_jumbo={
-				name="Gói Bí Ẩn",
+				name="Gói Tử Vi: Bí Ẩn",
 				text={
 					"Chọn và sử dụng",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:tarot}Vận Mệnh{}",
@@ -2036,7 +2036,7 @@ return {
 				},
 			},
 			p_arcana_mega={
-				name="Gói Huyền Bí",
+				name="Gói Tử Vi: Huyền Bí",
 				text={
 					"Chọn và sử dụng",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:tarot}Vận Mệnh{}",
@@ -2044,7 +2044,7 @@ return {
 				},
 			},
 			p_arcana_normal={
-				name="Gói Tò Mò",
+				name="Gói Tử Vi: Tò Mò",
 				text={
 					"Chọn và sử dụng",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:tarot}Vận Mệnh{}",
@@ -2052,28 +2052,28 @@ return {
 				},
 			},
 			p_buffoon_jumbo={
-				name="Gói Hề Hước",
+				name="Gói Gánh Xiếc: Hề Hước",
 				text={
 					"Chọn",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:joker}Joker{}",
 				},
 			},
 			p_buffoon_mega={
-				name="Gói Hề Chúa",
+				name="Gói Gánh Xiếc: Hề Chúa",
 				text={
 					"Chọn",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:joker}Joker{}",
 				},
 			},
 			p_buffoon_normal={
-				name="Gói Hài Nhạt",
+				name="Gói Gánh Xiếc: Hài Nhạt",
 				text={
 					"Chọn",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:joker}Joker{}",
 				},
 			},
 			p_celestial_jumbo={
-				name="Gói Lộng Thiên",
+				name="Gói Thiên Hà: Dải Ngân Hà",
 				text={
 					"Chọn và sử dụng",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:planet}Hành Tinh{}",
@@ -2081,7 +2081,7 @@ return {
 				},
 			},
 			p_celestial_mega={
-				name="Gói Vĩnh Thiên",
+				name="Gói Thiên Hà: Đám Xử Nữ",
 				text={
 					"Chọn và sử dụng",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:planet}Hành Tinh{}",
@@ -2089,7 +2089,7 @@ return {
 				},
 			},
 			p_celestial_normal={
-				name="Gói Huyễn Thiên",
+				name="Gói Thiên Hà: Thái Dương Hệ",
 				text={
 					"Chọn và sử dụng",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:planet}Hành Tinh{}",
@@ -2097,7 +2097,7 @@ return {
 				},
 			},
 			p_spectral_jumbo={
-				name="Gói Ma Mị",
+				name="Gói Tâm Linh: Mịt Mù",
 				text={
 					"Chọn và sử dụng",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:spectral}Cô Hồn{}",
@@ -2105,7 +2105,7 @@ return {
 				},
 			},
 			p_spectral_mega={
-				name="Gói Huyễn Hồn",
+				name="Gói Tâm Linh: Ma Mị",
 				text={
 					"Chọn và sử dụng",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:spectral}Cô Hồn{}",
@@ -2113,7 +2113,7 @@ return {
 				},
 			},
 			p_spectral_normal={
-				name="Gói Mờ Ảo",
+				name="Gói Tâm Linh: Mờ Ảo",
 				text={
 					"Chọn và sử dụng",
 					"{C:attention}#1#{} trong {C:attention}#2#{} lá {C:spectral}Cô Hồn{}",
@@ -2121,7 +2121,7 @@ return {
 				},
 			},
 			p_standard_jumbo={
-				name="Gói Tiêu Chuẩn Khủng",
+				name="Gói Thẻ Bài: Trung",
 				text={
 					"Chọn",
 					"{C:attention}#2#{C:attention} bài đánh{} để",
@@ -2129,7 +2129,7 @@ return {
 				},
 			},
 			p_standard_mega={
-				name="Gói Siêu Tiêu Chuẩn",
+				name="Gói Thẻ Bài: Đại",
 				text={
 					"Chọn",
 					"{C:attention}#2#{C:attention} bài đánh{} để",
@@ -2137,7 +2137,7 @@ return {
 				},
 			},
 			p_standard_normal={
-				name="Gói Tiêu Chuẩn",
+				name="Gói Thẻ Bài: Tiểu",
 				text={
 					"Chọn",
 					"{C:attention}#2#{C:attention} bài đánh{} để",
@@ -3540,7 +3540,7 @@ return {
 			k_also_applied="Còn áp dụng",
 			k_ante="Canh bac",
 			k_ante_cap="CANH BẠC",
-			k_arcana_pack="Gói chiêm tinh",
+			k_arcana_pack="Gói tử vi",
 			k_balanced="Cân bằng",
 			k_banned_cards="Lá Bị Cấm",
 			k_banned_tags="Nhãn Bị Cấm",
@@ -3548,7 +3548,7 @@ return {
 			k_base_cards="Bài Còn Lại",
 			k_best_hand="Tay tốt nhất",
 			k_booster="Tăng Cường",
-			k_buffoon_pack="Gói chú hề",
+			k_buffoon_pack="Gói gánh xiếc",
 			k_cap_consumables="TIÊU HAO",
 			k_card_stats="Chỉ số bài",
 			k_celestial_pack="Gói thiên hà",
@@ -3592,7 +3592,7 @@ return {
 			k_legendary="Huyền thoại",
 			k_level_prefix="cấp.",
 			k_level_up_ex="Lên cấp!",
-			k_locked="Locked",
+			k_locked="Khoá",
 			k_lower_score="này đã ghi ",
 			k_lvl="cấp. ",
 			k_melted_ex="Melted!",
@@ -3634,7 +3634,7 @@ return {
 			k_seeded_run="Trận đấu dùng Seed",
 			k_skipped_cap="BỎ QUA",
 			k_spectral="Cô Hồn",
-			k_spectral_pack="Gói Tâm Linh",
+			k_spectral_pack="Gói tâm linh",
 			k_stake="Cọc",
 			k_stake_level="Mức Cọc",
 			k_standard_pack="Gói Tiêu Chuẩn",
