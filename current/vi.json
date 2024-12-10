@@ -351,7 +351,7 @@
       "v_telescope": {
         "name": "Kính Thiên Văn",
         "text": [
-          "Mọi {C:attention}Gói Thiên Hà{} luân",
+          "Mọi {C:attention}Gói Thiên Hà{} luôn",
           "bao gồm lá {C:planet}Hành Tinh{}",
           "ứng với {C:attention}tay bài{} ",
           "chơi nhiều nhất cả trận"
@@ -361,13 +361,13 @@
         "text": [
           "Các lá {C:spectral}Cô Hồn{}",
           "có thể xuất hiện trong",
-          "những {C:attention}Gói Vận Mệnh"
+          "những {C:attention}Gói Tử Vi"
         ],
         "name": "Quả Cầu Điềm Báo",
         "unlock": [
           "Sử dụng tổng cộng ",
           "được {C:attention}#1# lá {C:tarot}Vận Mệnh{} ",
-          "trong bất kỳ {C:tarot}Gói Vận Mệnh{} nào",
+          "trong bất kỳ {C:tarot}Gói Tử Vi{} nào",
           "{C:inactive}(#2#)"
         ]
       },
@@ -1209,7 +1209,7 @@
         "name": "Tên Lửa",
         "text": [
           "Nhận thưởng {C:money}$#1#{} vào cuối vòng",
-          "Khi Cược Trum bị tiêu diệt, ",
+          "Khi Cược Trùm bị tiêu diệt, ",
           "tiền thưởng được tăng thêm {C:money}$#2#{}"
         ]
       },
@@ -1381,7 +1381,7 @@
           "Nhận được {X:mult,C:white} X#1# {} hệ số nhân ",
           "nếu đạt được {C:attention}16{}{s:0.4,C:attention}tuổi{}",
           "lá Cường Hoá trong bộ bài đầy đủ",
-          "{C:inactive}(Hiện tại sẽ nhận {C:attention}#2#{C:inactive})"
+          "{C:inactive}(Hiện tại sở hữu {C:attention}#2#{C:inactive})"
         ],
         "name": "Bằng Lái Xe",
         "unlock": [
@@ -1527,7 +1527,7 @@
         ]
       },
       "j_fibonacci": {
-        "name": "Fibonacci",
+        "name": "Dãy số Fibonacci",
         "text": [
           "Mỗi lá {C:attention}1{},",
           "{C:attention}2{}, {C:attention}3{}, {C:attention}5{}, hoặc {C:attention}8{} cho",
@@ -2192,7 +2192,7 @@
           "({C:diamonds}Rô{}, {C:clubs}Chuồn{},",
           "{C:hearts}Cơ{}, và {C:spades}Bích{})"
         ],
-        "name": "Bình Bông",
+        "name": "Bình Bông Màu Sắc",
         "unlock": [
           "Đạt được Canh Bạc",
           "cấp {E:1,C:attention}#1#"
@@ -3189,7 +3189,7 @@
         "text": [
           "Các lá {C:spectral}cô hồn{} có thể",
           "lảng vảng trong cửa hàng và",
-          "bộ bài bắt đầu với một lá {C:spectral,T:c_hex}Yểm Chú{} card"
+          "bộ bài bắt đầu với một lá {C:spectral,T:c_hex}Yểm Chú{}"
         ]
       },
       "b_erratic": {
@@ -3825,37 +3825,37 @@
       ]
     },
     "achievement_descriptions": {
-      "ante_upper": "Reach Ante 8",
-      "retrograde": "Get any poker hand to level 10",
-      "cartomancy": "Discover every Tarot card",
-      "clairvoyance": "Discover every Spectral card",
-      "you_get_what_you_get": "Win a run without rerolling the shop",
-      "ante_up": "Reach Ante 4",
-      "royale": "Play a Royal Flush",
-      "rule_breaker": "Complete every challenge run",
-      "_10k": "Score 10,000 Chips in a single hand",
-      "legendary": "Discover a Legendary Joker",
-      "card_discarder": "Discard at least 2500 Cards",
-      "big_hands": "Have 80 or more cards in your deck",
-      "_1000k": "Score 1,000,000 Chips in a single hand",
-      "shattered": "Break 2 Glass Cards in a single hand",
-      "rule_bender": "Complete any challenge run",
-      "tiny_hands": "Thin your deck down to 20 or fewer cards",
-      "completionist": "Discover 100% of your collection",
-      "heads_up": "Win a Run",
-      "mid_stakes": "Win a run on at least Black Stake difficulty",
-      "high_stakes": "Win a run on at least Gold Stake difficulty",
-      "astronomy": "Discover every Planet card",
-      "completionist_plus": "Win with every deck on Gold Stake difficulty",
-      "roi": "Buy 5 Vouchers by Ante 4",
-      "_100000k": "Score 100,000,000 Chips in a single hand",
-      "low_stakes": "Win a run on at least Red Stake difficulty",
-      "speedrunner": "Win a run in 12 or fewer rounds",
-      "extreme_couponer": "Discover every Voucher",
-      "completionist_plus_plus": "Earn a Gold Sticker on every Joker",
-      "flushed": "Play a Flush with 5 Wild Cards",
-      "card_player": "Play at least 2500 Cards",
-      "nest_egg": "Have $400 or more during a single run"
+      "ante_upper": "Đạt được Canh Bạc mức 8",
+      "retrograde": "Nâng cấp bất kỳ một loại tay bài lên cấp 10",
+      "cartomancy": "Khám phá được tất cả lá Vận Mệnh",
+      "clairvoyance": "Khám phá được tất cả lá Cô Hồn",
+      "you_get_what_you_get": "Thắng mà không cần làm mới cửa hàng",
+      "ante_up": "Đạt được Canh Bạc mức 4",
+      "royale": "Đánh được một Thùng Phá Sảnh",
+      "rule_breaker": "Hoàn thành được mọi thử thách",
+      "_10k": "Ghi được 10,000 phỉnh chỉ với 1 lượt",
+      "legendary": "Khám phá được một Joker Huyền Thoại",
+      "card_discarder": "Loại bỏ ít nhất 2500 lá",
+      "big_hands": "Sở hữu từ 80 lá trong bộ bài",
+      "_1000k": "Ghi được 100,000 phỉnh chỉ với 1 lượt",
+      "shattered": "Vỡ 2 lá bài Kính chỉ trong một lượt",
+      "rule_bender": "Hoành thành được bất kỳ một thử thách",
+      "tiny_hands": "Giảm số lượng bài trong bộ bài hoàn chỉnh xuống 20 hoặc ít hơn",
+      "completionist": "Khám phá được toàn bộ bộ sưu tập",
+      "heads_up": "Thắng một trận",
+      "mid_stakes": "Thắng một trận với độ khó ít nhất Cọc Đen",
+      "high_stakes": "Thắng một trận với độ khó Cọc Vàng",
+      "astronomy": "Khám phá được tất cả lá Hành Tinh",
+      "completionist_plus": "Thắng với tất cả bộ bài ở độ khó Cọc Vàng",
+      "roi": "Mua được 5 Phiếu Chứng Nhận ở mức Canh Bạc 4",
+      "_100000k": "Ghi được 100,000,000 phỉnh chỉ với 1 lượt",
+      "low_stakes": "Thắng một trận với độ khó ít nhất Cọc Đỏ",
+      "speedrunner": "Thắng một trận với 12 vòng hoặc ít hơn",
+      "extreme_couponer": "Khám phá được mọi Phiếu Chứng Nhận",
+      "completionist_plus_plus": "Ghi được Tem Vàng vào tất cả Joker",
+      "flushed": "Đánh một tay thùng với 5 lá Tự Do",
+      "card_player": "Đánh ít nhất 2500 lá",
+      "nest_egg": "Kiếm được $400 hoặc nhiều hơn trong 1 trận"
     },
     "poker_hand_descriptions": {
       "High Card": [
