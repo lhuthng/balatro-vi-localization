@@ -1,3 +1,11 @@
 mv lang*lua current/vi.lua
 mv lang*json current/vi.json
-cp current/vi.lua ../Balatro/localization/vi.lua
+
+if [ $# -eq 0 ]; then
+    cp current/vi.lua ../Balatro/localization/vi.lua
+elif [ $# -eq 1 ]; then
+    cp current/vi.lua "$1/Balatro/localization/vi.lua"
+else
+    echo "Usage: $0 [destination_path]"
+    exit 1
+fi
