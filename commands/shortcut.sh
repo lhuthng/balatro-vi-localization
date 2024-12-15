@@ -83,6 +83,9 @@ fi
 
 # Replace the localization
 if [[ "$v_option" == true ]]; then
+    echo "Update current"
+    mv ../lang*lua ../current/vi.lua
+    mv ../lang*json ../current/vi.json
     echo "Copy the localization"
     cp ../current/vi.lua "$p_option/Balatro/localization/vi.lua"
 fi
