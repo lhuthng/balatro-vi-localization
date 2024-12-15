@@ -805,7 +805,7 @@
         "name": "Lá Cây Xanh Tươi",
         "text": [
           "Tất cả bài đều bị vô hiệu hoá",
-          "cho tới khi "
+          "cho tới khi bón một lá Joker"
         ]
       },
       "bl_arm": {
@@ -1495,9 +1495,9 @@
       "j_sixth_sense": {
         "name": "Giác Quan Thứ Sáu",
         "text": [
-          "Nếu {C:attention}tay đầu tiên{} của ",
-          "vòng chỉ có 1 lá {C:attention}6{}, tiêu ",
-          "huỷ nó và tạo một lá {C:spectral}Cô Hồn{}",
+          "Nếu {C:attention}tay đầu tiên{} trong ",
+          "vòng được đánh với lá {C:attention}6{}, tế",
+          "nó và triệu hồi một lá {C:spectral}Cô Hồn{}",
           "{C:inactive}(Phải còn chỗ)"
         ]
       },
@@ -1753,7 +1753,7 @@
         "text": [
           "Tái kích hoạt hiệu ",
           "ứng của toàn bộ lá ",
-          "{C:attention}bài giữ lại{} trên tay"
+          "bài {C:attention}giữ lạ trên tayi{}"
         ]
       },
       "j_crafty": {
@@ -2047,7 +2047,7 @@
         ]
       },
       "j_hiker": {
-        "name": "Kẻ Du Mục",
+        "name": "Người Từng Trải",
         "text": [
           "Mỗi lá {C:attention}bài đánh{}",
           "vĩnh viễn nhận thêm",
@@ -2057,9 +2057,9 @@
       "j_campfire": {
         "name": "Lửa Trại",
         "text": [
-          "Lá này tăng {X:mult,C:white}X#1#{} hệ số nhân",
-          "cho mỗi lá {C:attention}được bán{}, nhưng ",
-          "quay lại {X:mult,C:white}X1{} khi {C:attention}Cược Trùm{} bị hạ gục",
+          "Bùng lên {X:mult,C:white}X#1#{} hệ số nhân",
+          "cho mỗi lá {C:attention}được bán{}, nhưng tắt dần",
+          "và quay lại với {X:mult,C:white}X1{} khi {C:attention}Cược Trùm{} bị hạ gục",
           "{C:inactive}(Hiện tại sẽ nhận {X:mult,C:white}X#2#{C:inactive} hệ số)"
         ]
       },
@@ -2248,7 +2248,7 @@
         "name": "Bá Tước",
         "text": [
           "Mỗi con {C:attention}Vua{}",
-          "giữ lại cho ",
+          "giữ trên tay cho ",
           "{X:mult,C:white} X#1# {} hệ số nhân"
         ]
       }
@@ -3368,7 +3368,7 @@
         "Mở"
       ],
       "k_mult": "Nhân",
-      "b_challenges": "Thử Thách",
+      "b_challenges": "Thử thách",
       "ph_stat_voucher": "Tổng số lần phiếu này được lấy",
       "k_cap_consumables": "TIÊU HAO",
       "k_undisovered": "Chưa khám phá",
@@ -3421,7 +3421,7 @@
       "b_seals": "Dấu mộc",
       "b_set_monitor": "Màn Hình",
       "b_playbalatro": "Truy cập playbalatro.com",
-      "b_enhanced_cards": "Cường Hoá",
+      "b_enhanced_cards": "Cường hoá",
       "b_copy": "Sao chép",
       "b_set_game": "Trò Chơi",
       "k_duplicated_ex": "Nhân đôi!",
@@ -3453,7 +3453,7 @@
       "k_unknown": "?? :D ??",
       "b_set_CRT": "CRT (Hiệu ứng như tivi cũ)",
       "b_music": "Nhạc",
-      "k_unlocked_ex": "Mỡ khoá!",
+      "k_unlocked_ex": "Mở khoá!",
       "b_sell": "BÁN",
       "ph_score_poker_hand": "Tay bài dùng nhiều nhất",
       "b_play_cap": "CHIẾN",
@@ -3471,11 +3471,11 @@
       "k_aces": "Xì",
       "k_active_ex": "Đang kích hoạt!",
       "k_trophy": "Trophy",
-      "b_cash_out": "Rút Tiền",
+      "b_cash_out": "Rút tiền",
       "k_high_score_ex": "Điểm cao!",
       "k_safe_ex": "An toàn!",
       "k_booster": "Tăng Cường",
-      "b_booster_packs": "Gói Tăng Cường",
+      "b_booster_packs": "Gói tăng cường",
       "b_stat_vouchers": "Phiếu chứng nhận",
       "ml_disabled_seed": [
         "Vô hiệu hoá tất cả ",
@@ -3496,7 +3496,7 @@
       "b_delete_profile": "Xoá người chơi",
       "b_full_deck": "Đủ bộ",
       "b_reset_profile": "Bắt đầu lại",
-      "k_deck_stake_wins": "Mức Cọc Vượt Qua",
+      "k_deck_stake_wins": "Mức cọc",
       "b_options": "Tuỳ chỉnh",
       "k_progress": "Quá trình",
       "ml_windowmode_opt": [
@@ -3521,7 +3521,7 @@
       "k_joker_stickers": "Tem",
       "k_joker": "Joker",
       "ph_blind_reward": "Phần thưởng:",
-      "ph_defeat_the_boss": "Hạ cục Cược Trùm",
+      "ph_defeat_the_boss": "Hạ gục Cược Trùm",
       "ph_demo_thanks_1": "Thanks for playing the",
       "k_ante_cap": "CANH BẠC",
       "k_reset": "Đổi lại",
@@ -3539,8 +3539,8 @@
       "ph_score_cards_played": "Số bài đánh",
       "b_set_game_vol": "Âm Lượng Hiệu Ứng",
       "b_editions": "Phiên bản",
-      "b_blinds": "Mức Cược",
-      "b_jokers": "Tổng Hợp Jokers",
+      "b_blinds": "Mức cược",
+      "b_jokers": "Tổng hợp jokers",
       "b_vouchers": "Phiếu chứng nhận",
       "k_celestial_pack": "Gói thiên hà",
       "b_stat_spectrals": "Cô hồn",
@@ -3709,7 +3709,7 @@
       "b_back": "Quay lại",
       "b_endless": "Chơi tiếp",
       "k_ante": "Canh bac",
-      "k_achievements_disabled": "Không còn ghi nhận thành tựu",
+      "k_achievements_disabled": "Thành tựu không còn được công nhận",
       "ph_4_7_of_clubs": "bốn 7 chuồng",
       "ml_play_discard_pos_opt": [
         "Bỏ/Đánh",
@@ -3729,7 +3729,7 @@
       "b_remaining": "Còn lại",
       "b_play_hand": "Đánh",
       "k_achievement": "Thành tựu",
-      "b_main_menu": "Menu Chính"
+      "b_main_menu": "Menu chính"
     },
     "labels": {
       "voucher": "Phiếu Chứng Nhận",
@@ -3798,7 +3798,7 @@
       "a_xmult": "X#1# Hệ Số Nhân",
       "challenges_completed": "Hoàn thành được #1#/#2# thử thách",
       "loyalty_inactive": "Còn Lại #1#",
-      "remaining_hand_money": "Lượt Đánh Còn Lại (mỗi lượt $#1#)",
+      "remaining_hand_money": "Lượt đánh còn lại ($#1# mỗi lượt)",
       "a_chips": "+#1#",
       "ml_negative_desc": [
         "In Âm Bản",
@@ -3811,7 +3811,7 @@
         "In Đa Sắc",
         "X#1# hệ số nhân"
       ],
-      "remaining_discard_money": "Lượt Bỏ Còn Lại (mỗi lượt $#1#)",
+      "remaining_discard_money": "Lượt bỏ còn lại ($#1# mỗi lượt)",
       "a_remaining": "Còn Lại #1#",
       "ml_foil_desc": [
         "In Nổi",
@@ -4185,22 +4185,30 @@
       "Spades": {
         "1": "Mặc định",
         "2": "The Witcher",
-        "3": "Cyberpunk 2077"
+        "3": "Cyberpunk 2077",
+        "4": "Potion Craft",
+        "5": "Warframe"
       },
       "Diamonds": {
         "1": "Mặc định",
         "2": "Dave the Diver",
-        "3": "Stardew Valley"
+        "3": "Stardew Valley",
+        "4": "Enter the Gungeon",
+        "5": "1000xRESIST"
       },
       "Clubs": {
         "1": "Mặc định",
         "2": "Vampire Survivors",
-        "3": "Slay the Spire"
+        "3": "Slay the Spire",
+        "4": "Cult of the Lamb",
+        "5": "Divinity Original Sin 2"
       },
       "Hearts": {
         "1": "Mặc định",
         "2": "Among Us",
-        "3": "The Binding of Isaac"
+        "3": "The Binding of Isaac",
+        "4": "Shovel Knight",
+        "5": "Don’t Starve"
       }
     },
     "poker_hands": {
