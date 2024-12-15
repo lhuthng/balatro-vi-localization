@@ -1,8 +1,0 @@
-if [ $# -eq 0 ]; then
-    cp fonts/m6x11plus_vi.ttf ../Balatro/resources/fonts/
-elif [ $# -eq 1 ]; then
-    cp fonts/m6x11plus_vi.ttf "$1/Balatro/resources/fonts/"
-else
-    echo "Usage: $0 [destination_path]"
-    exit 1
-fi
