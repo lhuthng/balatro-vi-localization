@@ -12,7 +12,7 @@ DEFAULT_PATH_MAC="/Users/$(whoami)/Library/Application Support/Steam/steamapps/c
 
 # Function to show usage
 usage() {
-    echo "Usage: $0 [-b <Mac|Win|Linux>] [-f] [-v] [-p <path>]"
+    echo "Usage: $0 [-b] [-f] [-v] [-p <path>]"
     echo "  -b    Optional build command"
     echo "  -f    Copy Font (no value required)"
     echo "  -v    Copy Localization (no value required)"
