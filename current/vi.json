@@ -2820,8 +2820,8 @@
       "p_standard_jumbo": {
         "name": "Gói Thẻ Bài: Trung",
         "text": [
-          "Chọn",
-          "{C:attention}#2#{C:attention} bài đánh{} để",
+          "Chọn 1 trong",
+          "{C:attention}#2# lá bài đánh{} để",
           "thêm vào bộ bài"
         ]
       },
@@ -2920,8 +2920,8 @@
       "p_standard_mega": {
         "name": "Gói Thẻ Bài: Đại",
         "text": [
-          "Chọn",
-          "{C:attention}#2#{C:attention} bài đánh{} để",
+          "Chọn 1 trong",
+          "{C:attention}#2# lá bài đánh{} để",
           "thêm vào bộ bài"
         ]
       },
@@ -3057,8 +3057,8 @@
       "p_standard_normal": {
         "name": "Gói Thẻ Bài: Tiểu",
         "text": [
-          "Chọn",
-          "{C:attention}#2#{C:attention} bài đánh{} để",
+          "Chọn 1 trong",
+          "{C:attention}#2# lá bài đánh{} để",
           "thêm vào bộ bài"
         ]
       },
