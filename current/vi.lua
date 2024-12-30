@@ -1238,7 +1238,7 @@ return {
 				text={
 					"Tái kích hoạt hiệu ",
 					"ứng của toàn bộ lá ",
-					"bài {C:attention}giữ lạ trên tayi{}",
+					"bài {C:attention}giữ lại trên tay{}",
 				},
 			},
 			j_misprint={
@@ -1788,7 +1788,7 @@ return {
 					"Lá này nhận thêm {C:mult}+#1#{} hệ",
 					"số nhân nếu tay đánh",
 					"chứa {C:attention}#2#",
-					"{C:inactive}(Hiện tại sẽ tăng {C:red}+#3#{C:inactive} Mult)",
+					"{C:inactive}(Hiện tại sẽ tăng {C:red}+#3#{C:inactive} hệ số)",
 				},
 			},
 			j_turtle_bean={
@@ -2449,7 +2449,7 @@ return {
 				name="Vật Chất Huyền Bí",
 				text={
 					"Đổi phiên bản của một {C:attention}Joker{}",
-					"bất kỳ thành {C:dark_edition}In Đa Sắc{} đồng",
+					"bất kỳ thành {C:dark_edition}In Âm Bản{} đồng",
 					"thời giảm kích cỡ tay đi {C:red}#1#{}",
 				},
 			},
@@ -3777,7 +3777,7 @@ return {
 			ph_improve_run="Cải thiện trận đấu của bạn!",
 			ph_most_played="(tay bài chơi nhiều nhất)",
 			ph_mr_bones="Được cứu bởi Quý Ngài Xương Xẩu",
-			ph_no_boss_active="no boss active",
+			ph_no_boss_active="Không có hiệu ứng trùm",
 			ph_no_vouchers="Không phiếu chứng nhận nào được lấy trong trận này",
 			ph_score_at_least="Ghi điểm ít nhất",
 			ph_score_cards_discarded="Số bài bỏ",

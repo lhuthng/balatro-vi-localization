@@ -1143,7 +1143,7 @@
           "Lá này nhận thêm {C:mult}+#1#{} hệ",
           "số nhân nếu tay đánh",
           "chứa {C:attention}#2#",
-          "{C:inactive}(Hiện tại sẽ tăng {C:red}+#3#{C:inactive} Mult)"
+          "{C:inactive}(Hiện tại sẽ tăng {C:red}+#3#{C:inactive} hệ số)"
         ]
       },
       "j_hack": {
@@ -1753,7 +1753,7 @@
         "text": [
           "Tái kích hoạt hiệu ",
           "ứng của toàn bộ lá ",
-          "bài {C:attention}giữ lạ trên tayi{}"
+          "bài {C:attention}giữ lại trên tay{}"
         ]
       },
       "j_crafty": {
@@ -2619,7 +2619,7 @@
         "name": "Vật Chất Huyền Bí",
         "text": [
           "Đổi phiên bản của một {C:attention}Joker{}",
-          "bất kỳ thành {C:dark_edition}In Đa Sắc{} đồng",
+          "bất kỳ thành {C:dark_edition}In Âm Bản{} đồng",
           "thời giảm kích cỡ tay đi {C:red}#1#{}"
         ]
       },
@@ -3676,7 +3676,7 @@
         "Balatro on Steam and sign up for",
         "the newsletter at playbalatro.com"
       ],
-      "ph_no_boss_active": "no boss active",
+      "ph_no_boss_active": "Không có hiệu ứng trùm",
       "ph_choose_blind_1": "Chọn màn cược",
       "k_melted_ex": "Melted!",
       "b_continue": "Tiếp tục",
