@@ -1579,9 +1579,9 @@ return {
 				},
 			},
 			j_sock_and_buskin={
-				name="Hài Và Bi",
+				name="Bi Hài",
 				text={
-					"Tái kích hoặt ",
+					"Tái kích hoạt ",
 					"mọi lá bài {C:attention}hình{}",
 				},
 				unlock={

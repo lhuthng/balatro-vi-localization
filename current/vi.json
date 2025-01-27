@@ -995,10 +995,10 @@
       },
       "j_sock_and_buskin": {
         "text": [
-          "Tái kích hoặt ",
+          "Tái kích hoạt ",
           "mọi lá bài {C:attention}hình{}"
         ],
-        "name": "Hài Và Bi",
+        "name": "Bi Hài",
         "unlock": [
           "Đánh tổng cộng",
           "{C:attention,E:1}#1#{} lá bài hình",
