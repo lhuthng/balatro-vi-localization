@@ -1348,7 +1348,7 @@ return {
 				},
 			},
 			j_photograph={
-				name="Tấm Hình",
+				name="Chụp Hình",
 				text={
 					"Lá bài {C:attention}hình{} ghi",
 					"điểm đầu tiên nhận",
@@ -1535,12 +1535,12 @@ return {
 				name="Đường Tắt",
 				text={
 					"Cho phép đi {C:attention}Sảnh{} với từng con",
-					"cách nhau {C:attention}1 thứ hạng",
+					"cách nhau tới {C:attention}2 thứ hạng",
 					"{C:inactive}(vd: {C:attention}10 8 6 5 3{C:inactive})",
 				},
 			},
 			j_sixth_sense={
-				name="Giác Quan Thứ Sáu",
+				name="Giác Quan Thứ 6",
 				text={
 					"Nếu {C:attention}tay đầu tiên{} trong ",
 					"vòng được đánh với lá {C:attention}6{}, tế",
@@ -1644,8 +1644,8 @@ return {
 			j_stuntman={
 				name="Diễn Viên Đóng Thế",
 				text={
-					"Tăng {C:chips}+#1#{} phỉnh",
-					"nhưng giảm {C:attention}#2#{} kích cỡ tay",
+					"Thế {C:attention}#2#{} kích cỡ tay",
+					"để đổi lấy {C:chips}+#1#{} phỉnh",
 				},
 				unlock={
 					"Ghi được {E:1,C:attention}#1#{}",
@@ -3639,7 +3639,7 @@ return {
 			k_safe_ex="An toàn!",
 			k_saved_ex="An toàn!",
 			k_seed="Seed",
-			k_seeded_run="Trận đấu dùng Seed",
+			k_seeded_run="Dùng seed",
 			k_skipped_cap="BỎ QUA",
 			k_spectral="Cô Hồn",
 			k_spectral_pack="Gói tâm linh",
@@ -3833,7 +3833,7 @@ return {
 			red_seal="Mộc Đỏ",
 			rental="Thuê",
 			tarot="Vận Mệnh",
-			uncommon="Lạ",
+			uncommon="Không Phổ Biến",
 			voucher="Phiếu Chứng Nhận",
 		},
 		poker_hand_descriptions={
@@ -4259,16 +4259,16 @@ return {
 				"{C:green}1 trong #1#{} lá bài rút được sẽ bị úp",
 			},
 			ch_c_inflation={
-				"Vĩnh viễn nâng giá của mọi thứ lên {C:money}$1{} mỗi lần mua gì đó",
+				"Mọi thứ bị lạm phát thêm {C:money}$1{} mỗi lần mua gì đó",
 			},
 			ch_c_minus_hand_size_per_X_dollar={
 				"Giữ ít hơn {C:red}1{} bài cho mỗi {C:money}$#1#{} sở hữu",
 			},
 			ch_c_no_extra_hand_money={
-				"{C:blue}Lượt Đánh{} dư không còn cho thêm tiền",
+				"{C:blue}Lượt Đánh{} dư mỗi vòng không còn thưởng tiền",
 			},
 			ch_c_no_interest={
-				"Không còn nhận được {C:attention}Tiền Lãi{} vào cuối vòng",
+				"{C:attention}Tiền Lãi{} vào cuối vòng bị cắt hoàn toàn",
 			},
 			ch_c_no_reward={
 				"Mọi {C:attention}Màn Cược{} không còn cho tiền thưởng",
@@ -4277,7 +4277,7 @@ return {
 				"{C:attention}Màn Cược #1#{} không còn cho tiền thưởng",
 			},
 			ch_c_no_shop_jokers={
-				"Joker không còn được bán trong {C:attention}cửa hàng",
+				"Joker trong {C:attention}cửa hàng{} bị dẹp",
 			},
 			ch_c_none={
 				"{C:inactive}không có",
