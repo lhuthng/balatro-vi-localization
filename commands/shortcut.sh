@@ -5,8 +5,9 @@ OS=$(uname)
 # Initialize variables
 b_option=false
 f_option=false
-v_option=false
+l_option=false
 p_option=""
+z_option=false
 
 DEFAULT_PATH_MAC="/Users/$(whoami)/Library/Application Support/Steam/steamapps/common/Balatro/Balatro.app/Contents/Resources"
 
@@ -15,13 +16,14 @@ usage() {
     echo "Usage: $0 [-b] [-f] [-v] [-p <path>]"
     echo "  -b    Optional build command"
     echo "  -f    Copy Font (no value required)"
-    echo "  -v    Copy Localization (no value required)"
+    echo "  -l    Copy Localization (no value required)"
     echo "  -p    Optional path"
+    echo "  -z    Unzip"
     exit 1
 }
 
 # Parse command-line arguments
-while getopts ":bfvp:" opt; do
+while getopts ":bflzp:" opt; do
     case ${opt} in
         b)
             b_option=true
@@ -29,8 +31,8 @@ while getopts ":bfvp:" opt; do
         f)
             f_option=true
             ;;
-        v)
-            v_option=true
+        l)
+            l_option=true
             ;;
         p)
             # Validate the path
@@ -40,6 +42,9 @@ while getopts ":bfvp:" opt; do
                 echo "Error: Path '${OPTARG}' does not exist."
                 usage
             fi
+            ;;
+        z)
+            z_option=true
             ;;
         \?)
             echo "Error: Invalid option '-${OPTARG}'"
@@ -69,8 +74,13 @@ if [[ -z "$p_option" ]]; then
     fi
 fi
 
+if [[ "$z_option" == "true" ]]; then
+    echo "Remove Balatro"
+    rm -r -f "$p_option/Balatro"
+fi
+
 # Check if the folder exists
-if [[ "$OS" == "Darwin" && ! -d "$p_option/Balatro" ]]; then
+if [[ "$z_option" == "true" || ("$OS" == "Darwin" && ! -d "$p_option/Balatro") ]]; then
     echo "Unzip Balatro.love"
     unzip -q "$p_option/Balatro.love" -d "$p_option/Balatro"
 fi
@@ -82,7 +92,7 @@ if [[ "$f_option" == true ]]; then
 fi
 
 # Replace the localization
-if [[ "$v_option" == true ]]; then
+if [[ "$l_option" == true ]]; then
     echo "Update current"
     mv ../lang*lua ../current/vi.lua
     mv ../lang*json ../current/vi.json
