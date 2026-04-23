@@ -3,112 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Balatro VI Localization Tool</title>
     <style>
         @font-face {
-            font-family: 'balatro';
-            src: url('../fonts/m6x11plus_vi.ttf') format('truetype');
+            font-family: "balatro";
+            src: url("../fonts/m6x11plus_vi.ttf") format("truetype");
         }
-        #mainContainer {
-            font-family: 'balatro', sans-serif;
-            textarea, input {
-                font-family: 'balatro', sans-serif;
-            }
-        }
-        .objectContainer {
-            border: 1px solid black;
-            margin: 5px;
-            padding: 5px;
-            background-color: white;
-        }
-        .textContainer {
-            margin: 5px;
-        }
-        
-        textarea {
-            width: calc(100% - 10px);
-            height: auto;
-            resize: none;
-            overflow-y: hidden;
-        }
-        input[type='text'] {
-            width: 100%;
 
+        :root {
+            --bg-1: #efe9dc;
+            --bg-2: #d8ccb5;
+            --panel: #fff8ec;
+            --ink: #1b1b18;
+            --muted: #6e6659;
+            --accent: #0d7a5f;
+            --accent-2: #c4702f;
+            --danger-soft: #ffe2cc;
+            --line: #dbc8ae;
         }
-        p {
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
             margin: 0;
+            min-height: 100vh;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 15% 20%, #f8f0e0 0%, transparent 40%),
+                radial-gradient(circle at 85% 15%, #eddcc3 0%, transparent 34%),
+                linear-gradient(145deg, var(--bg-1), var(--bg-2));
+            font-family: "balatro", "Avenir Next", "Segoe UI", sans-serif;
         }
-        .styledButton {
-            border: 1px solid black;
-            background-color: white;
+
+        .app {
+            display: grid;
+            grid-template-columns: minmax(280px, 1fr) minmax(300px, 360px);
+            gap: 16px;
+            padding: 16px;
         }
-        .wait {
-            background: pink;
+
+        #mainContainer {
+            min-height: calc(100vh - 32px);
+            overflow: auto;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: color-mix(in srgb, var(--panel) 93%, white);
+            padding: 8px;
+            box-shadow: 0 10px 30px rgba(31, 24, 13, 0.08);
+            font-family: "balatro", "Avenir Next", sans-serif;
         }
-        .v-box {
-            display: flex;
-            justify-content: space-between;
-            gap: 5px;
-            align-items: baseline;
-        }
-        #floating {
-            position: fixed;
+
+        .sidebar {
             display: flex;
             flex-direction: column;
-            top: 10px;
-            right: 10px;
-            gap: 5px;
+            gap: 12px;
         }
-        .floatingContainer {
-            position: relative;
-            background-color: #f1f1f1;
-            padding: 20px;
-            border: 1px solid #ccc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        .panel {
+            background: color-mix(in srgb, var(--panel) 94%, white);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 6px 20px rgba(26, 20, 10, 0.07);
         }
-        .focus {
-            background-color: Gainsboro;
+
+        .panel h2 {
+            margin: 0 0 8px;
+            font-size: 18px;
+            letter-spacing: 0.2px;
         }
+
+        .help {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .controls {
+            display: grid;
+            gap: 8px;
+        }
+
+        input[type="file"],
+        input[type="text"],
+        textarea {
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fffdf8;
+            color: var(--ink);
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        input[type="text"],
+        textarea {
+            padding: 8px 10px;
+        }
+
+        textarea {
+            resize: none;
+            overflow: hidden;
+            min-height: 70px;
+        }
+
+        .styledButton {
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease, background-color 120ms ease;
+            width: auto;
+            min-width: 70px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 85%, #000000 6%), var(--accent));
+            color: #ffffff;
+            font-weight: 600;
+            font-family: inherit;
+            box-shadow: 0 6px 18px rgba(13, 122, 95, 0.12);
+        }
+
+        .styledButton:hover:enabled {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 22px rgba(13, 122, 95, 0.16);
+            filter: brightness(1.03);
+        }
+
+        .styledButton:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .styledButton.wait {
+            background: linear-gradient(180deg, color-mix(in srgb, var(--accent-2) 85%, #000000 6%), var(--accent-2));
+            border-color: color-mix(in srgb, var(--accent-2) 60%, var(--line));
+        }
+
+        .objectContainer {
+            border: 1px solid var(--line);
+            margin: 6px;
+            padding: 6px;
+            background: #fffdf9;
+            border-radius: 8px;
+        }
+
+        .v-box,
+        .v-box-2 {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .v-box .styledButton,
+        .v-box-2 .styledButton {
+            width: auto;
+            min-width: 70px;
+        }
+
+        .textContainer {
+            margin-top: 6px;
+        }
+
+        .sectionLabel {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
         #quickNavigator {
             display: flex;
             flex-direction: column;
+            gap: 6px;
+            max-height: 40vh;
+            overflow: auto;
         }
-        #replacementTool {
-            div {
-                border: none;
-                box-shadow: none;
-                display: flex;
-                align-items: center;
-                gap: 5px;
+
+        #quickNavigator a {
+            color: #195944;
+            text-decoration: none;
+            padding: 5px 8px;
+            border-radius: 7px;
+            border: 1px dashed transparent;
+            font-family: "balatro", "Avenir Next", sans-serif;
+        }
+
+        #quickNavigator a:hover {
+            border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+            background: color-mix(in srgb, var(--accent) 10%, transparent);
+        }
+
+        .focus {
+            background: color-mix(in srgb, var(--accent) 10%, white);
+        }
+
+        .row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .status {
+            margin: 8px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.35;
+        }
+
+        @media (max-width: 980px) {
+            .app {
+                grid-template-columns: 1fr;
+            }
+
+            #mainContainer {
+                min-height: 56vh;
+            }
+
+            #quickNavigator {
+                max-height: 24vh;
             }
         }
     </style>
 </head>
 <body>
-    <div id="mainContainer"></div>
-    <div id="floating">
-        <div id="loadingBox" class="floatingContainer">
-            <input type="file" id="fileInput" accept="application/json" />
-            <button id="saveButton1" class="styledButton" onClick="save()" disabled>Save</button>
-            <button id="saveButton2" class="styledButton" onClick="saveAsLua()" disabled>Save as Lua file</button>
-            <button id="updateAllButton" class="styledButton" onclick="updateAll()" disabled>Update ALL!</button>
-        </div>
-        <div id="replacementTool" class="floatingContainer">
-            <div>
-                <h2>Text Replacement Tool</h2>
-                <label for="useRegExp">
-                    (<input type="checkbox" id="useRegExp"> RegExp)
-                </label>
-            </div>
-            <label for="findText">Find:</label>
-            <input type="text" id="findText" placeholder=""><br>        
-            <label for="replaceText">Replace with:</label>
-            <input type="text" id="replaceText" placeholder=""><br><br>        
-            <button onclick="replace()">Apply</button>
-        </div>
-        <div id="quickNavigator" class="floatingContainer"></div>
+    <div class="app">
+        <div id="mainContainer"></div>
+
+        <aside class="sidebar">
+            <section id="loadingBox" class="panel">
+                <h2>Load and Export</h2>
+                <p class="help">Load localization JSON, edit values, then export JSON or Lua.</p>
+                <div class="controls">
+                    <input type="file" id="fileInput" accept="application/json" />
+                    <button id="saveButton1" class="styledButton" onClick="save()" disabled>Save JSON</button>
+                    <button id="saveButton2" class="styledButton" onClick="saveAsLua()" disabled>Save Lua</button>
+                    <button id="updateAllButton" class="styledButton" onclick="updateAll()" disabled>Apply All Changes</button>
+                </div>
+                <p id="statusText" class="status">No file loaded.</p>
+            </section>
+
+            <section id="replacementTool" class="panel">
+                <h2>Find and Replace</h2>
+                <div class="row">
+                    <label for="useRegExp">Use RegExp</label>
+                    <input type="checkbox" id="useRegExp">
+                </div>
+                <div class="controls">
+                    <label for="findText">Find</label>
+                    <input type="text" id="findText" placeholder="text or expression">
+                    <label for="replaceText">Replace with</label>
+                    <input type="text" id="replaceText" placeholder="replacement">
+                    <button class="styledButton" onclick="replace()">Apply Replace</button>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h2>Quick Navigator</h2>
+                <div id="quickNavigator"></div>
+            </section>
+        </aside>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>

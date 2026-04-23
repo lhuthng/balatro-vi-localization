@@ -4,76 +4,96 @@
 
 ![Progress](https://img.shields.io/badge/progress-80%25-blue)
 
-This guide explains how to add Vietnamese language to the **[Balatro](https://www.playbalatro.com/)** *unofficially*
+Unofficial Vietnamese localization for [Balatro](https://www.playbalatro.com/), including:
+1. Vietnamese font support.
+2. Vietnamese localization file.
+3. Helper scripts to patch and repack game files.
+4. A browser-based translation editor.
 
-Hướng dẫn này chỉ cách thêm ngôn ngữ Tiếng Việt vào trò chơi **[Balatro](https://www.playbalatro.com/)** *mình tự dịch :v*
-(Bên dưới soạn bằng tiếng anh, bản tiếng việt có thể xem ở [đây](readme-vi.md))
+Tiếng Việt: xem hướng dẫn bản Việt tại [readme-vi.md](readme-vi.md).
+
+## Repository Layout
+1. `current/vi.lua`: localization used for copy/deploy.
+2. `fonts/m6x11plus_vi.ttf`: font with Vietnamese glyph support.
+3. `commands/`: automation scripts for extraction, patch, and rebuild.
+4. `tools/`: JSON/Lua conversion and web editor.
 
 ## Requirements
-**Balatro** is built on **LÖVE** using **Lua** language. To modify the game, you need to install the following:
-- ~~**Lua**~~
-- ~~**LÖVE**~~
-- **7-Zip**: (Windows only, **WinRAR** doesn't work) for openning **LÖVE** executables
-## Finding Balatro Source Codes
-Reverse-engineering a **LÖVE** project is simple. Its executable is essentially an archive containing the game files.
-- **MacOS**: 
-  - Locate the executable file
-  - Right-click on it
-  - Select **Show Package Contents**
-  - Navigate to `Contents/Resources/`
-  - Right-click on `Balatro.love`
-  - Select **Open With>Archive Utility** to extract it
-  - Open the **Balatro** folder
-- **Windows**: 
-  - Locate the executable *.exe* file
-  - Right-click on `Balatro.exe`
-  - (Optional) Select **Show more options**
-  - Select **7-Zip>Open archive**
-- **Linux**: \<Soon to be updated\>
+1. Balatro installed locally.
+2. `zip` and `unzip` available in terminal.
+3. Windows users: `7-Zip` (recommended for opening archives).
 
-## Adding Vietnamese
+## Locate Balatro Resources
+1. macOS:
+   - Open Balatro app package.
+   - Go to `Contents/Resources/`.
+   - You should see `Balatro.love`.
+2. Windows:
+   - Find `Balatro.exe`.
+   - Open with 7-Zip.
+3. Linux:
+   - Similar flow: locate game install and access `Balatro.love`.
 
-### Adding Font
-Although I really love the font used in the game, it doesn't support Vietnamese characters. To address this, I’ve modified the font to support for Vietnamese characters.
+## Fast Workflow (Recommended)
+From the repository root:
 
-The extended font can be found [here](./fonts/m6x11plus_vi.ttf). Download and place it in **/resources/fonts/**.
+```bash
+cd commands
+./shortcut.sh -z -f -l -b
+```
 
-### Adding Localization
+This does all steps in order:
+1. Extract `Balatro.love` into `Resources/Balatro`.
+2. Copy Vietnamese font.
+3. Copy localization (`current/vi.lua`).
+4. Patch `game.lua` (`self.LANGUAGES` and `self.FONTS`) if needed.
+5. Rebuild `Balatro.love`.
 
-The localization file can be found [here](./current/vi.lua). Download and place it in **/localization/**.
+### Script Options
+```bash
+./shortcut.sh [-z] [-f] [-l] [-b] [-p <resources_path>]
+```
 
-To use the extended font and the vietnamese localization, update the script `game.lua` as following:
-- Search for the `self.LANGUAGES` declaration (arround line 942).
-- Append the following line to the end of the table (around line 959):
-    ```lua
-    ['vi'] = {font = 10, label = "Tiếng Việt", key = 'vi', beta = true, button = "Phản hồi ngôn ngữ", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},
-    ```
-    It should be like this after appended
-    ```lua
-        ['all2'] = {font = 9, label = "English", key = 'all', omit = true},
-        ['vi'] = {font = 10, label = "Tiếng Việt", key = 'vi', beta = true, button = "Phản hồi ngôn ngữ", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},
-    }
-    ```
-- Search for the `self.FONTS` declaration (arround line 969).
-- Append the following line to the end of the table (around line 978):
-    ```lua
-    {file = "resources/fonts/m6x11plus_vi.ttf", render_scale = self.TILESIZE*10, TEXT_HEIGHT_SCALE = 0.9, TEXT_OFFSET = {x=10,y=-20}, FONTSCALE = 0.1, squish = 1, DESCSCALE = 1},
-    ```
-    It should be like this after appended
-    ```lua
-        {file = "resources/fonts/GoNotoCJKCore.ttf", render_scale = self.TILESIZE*10, TEXT_HEIGHT_SCALE = 0.8, TEXT_OFFSET = {x=10,y=-20}, FONTSCALE = 0.1, squish = 1, DESCSCALE = 1},
-        {file = "resources/fonts/m6x11plus_vi.ttf", render_scale = self.TILESIZE*10, TEXT_HEIGHT_SCALE = 0.9, TEXT_OFFSET = {x=10,y=-20}, FONTSCALE = 0.1, squish = 1, DESCSCALE = 1},
-    }
-    ```
-- Save the script
-- *Windows user needs to update the modification in the archive (just hit Yes when asked)*
+1. `-z`: force re-extract from `Balatro.love`.
+2. `-f`: copy Vietnamese font.
+3. `-l`: copy localization file.
+4. `-b`: patch `game.lua` + rebuild `Balatro.love`.
+5. `-p`: custom path to Balatro `Resources` directory.
 
-- *MacOS user needs to update the `Balatro.love` as well as follow*
-  - Go back to the Resource folder (where Balatro folder is located)
-  - Right-click on `Balatro` folder
-  - Select `New Terminal at Folder`
-  - execute this command: 
-      ```bash
-      zip -r9 ../Balatro.love .
+Example with custom path:
 
-## That's all
+```bash
+./shortcut.sh -p "/path/to/Balatro.app/Contents/Resources" -z -f -l -b
+```
+
+## Manual Workflow
+If you do not want automation scripts:
+1. Put `fonts/m6x11plus_vi.ttf` into `resources/fonts/`.
+2. Put `current/vi.lua` into `localization/vi.lua`.
+3. Update `game.lua`:
+   - Add `vi` entry in `self.LANGUAGES`.
+   - Add `m6x11plus_vi.ttf` entry in `self.FONTS`.
+4. Repack game source into `Balatro.love`.
+
+## Web Translation Tool
+`tools/index.html` provides a visual JSON editor.
+
+### Run
+1. Open `tools/index.html` in a browser.
+2. Load a localization JSON file.
+3. Edit, find/replace, and export JSON or Lua.
+
+### Lua to JSON Conversion
+From `tools/`:
+
+```bash
+lua lua_to_json.lua ../lang.lua output.json
+```
+
+If arguments are omitted, it defaults to:
+1. Input: `../lang.lua`
+2. Output: `output.json`
+
+## Notes
+1. This project is unofficial and community-maintained.
+2. Keep backups of original game files before patching.

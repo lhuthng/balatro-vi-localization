@@ -1,234 +1,402 @@
-const file_input = document.getElementById('fileInput');
-const update_all_button = document.getElementById('updateAllButton');
-const quick_navigator = document.getElementById('quickNavigator');
-const main_container = document.getElementById("mainContainer");
-let current_target;
-let buttons;
-let inputs;
-let nav_location = {
-    '.descriptions.Joker': 'Joker',
-    '.descriptions.Tarot': 'Tarot',
-    '.descriptions.Planet': 'Planet',
-    '.descriptions.Spectral': 'Spectral',
-    '.descriptions.Enhanced': 'Enhanced',
-    '.descriptions.Edition': 'Edition',
-    '.descriptions.Stake': 'Planet',
-    '.descriptions.Blind': 'Blind',
-    '.descriptions.Tag': 'Tag',
-    '.descriptions.Stake': 'Stake',
-    '.descriptions.Voucher': 'Voucher',
-    '.descriptions.Back': 'Deck',
-    '.descriptions.Other': 'Other(Sticker, Seal, etc.)',
-    '.misc': 'Misc',
+const fileInput = document.getElementById("fileInput");
+const updateAllButton = document.getElementById("updateAllButton");
+const quickNavigator = document.getElementById("quickNavigator");
+const mainContainer = document.getElementById("mainContainer");
+const statusText = document.getElementById("statusText");
+
+const navLocation = {
+    ".descriptions.Joker": "Joker",
+    ".descriptions.Tarot": "Tarot",
+    ".descriptions.Planet": "Planet",
+    ".descriptions.Spectral": "Spectral",
+    ".descriptions.Enhanced": "Enhanced",
+    ".descriptions.Edition": "Edition",
+    ".descriptions.Blind": "Blind",
+    ".descriptions.Tag": "Tag",
+    ".descriptions.Stake": "Stake",
+    ".descriptions.Voucher": "Voucher",
+    ".descriptions.Back": "Deck",
+    ".descriptions.Other": "Other",
+    ".misc": "Misc"
+};
+
+const state = {
+    data: null,
+    buttons: [],
+    textInputs: [],
+    currentTarget: null,
+    changedCount: 0,
+    wordCount: 0
 };
 
 function init() {
-    current_target = undefined;
-    buttons = [];
-    inputs = [];
-    main_container.innerHTML = '';
-    quick_navigator.innerHTML = '';
+    state.buttons = [];
+    state.textInputs = [];
+    state.currentTarget = null;
+    state.changedCount = 0;
+    state.wordCount = 0;
+
+    mainContainer.innerHTML = "";
+    quickNavigator.innerHTML = "";
+
     document.getElementById("saveButton1").disabled = false;
     document.getElementById("saveButton2").disabled = false;
-    update_all_button.disabled = false;
+    updateAllButton.disabled = false;
+    updateAllButton.classList.remove("wait");
 }
 
-file_input.addEventListener('change', event => {
-    const file = event.target.files[0];
+function updateStatus(extraMessage) {
+    const words = `Words: ${state.wordCount.toLocaleString()}`;
+    const changed = `Pending updates: ${state.changedCount}`;
+    const tail = extraMessage ? ` | ${extraMessage}` : "";
+    statusText.textContent = `${words} | ${changed}${tail}`;
+}
 
-    if (file) {
-        console.log("Loaded.");
-
-        if (file.type === 'application/json') {
-            const reader = new FileReader();
-            reader.onload = e => {
-                init();
-                data = JSON.parse(e.target.result);
-                show(data, main_container);
-                quick_navigator.querySelectorAll('*').forEach(a => {
-                    a.addEventListener('click', e => {
-                        e.preventDefault();
-                        const target = document.getElementById(a.textContent);
-                        target.scrollIntoView({ behavior: "smooth" });
-                        if (current_target) current_target.classList.remove('focus');
-                        current_target = target;
-                        target.classList.add('focus');
-                    });
-                });
-            };
-            reader.readAsText(file);
-        }
-        else {
-            alert("Please select a valid JSON file.");
-        }
-    }
-    else {
+fileInput.addEventListener("change", (event) => {
+    const file = event.target.files && event.target.files[0];
+    if (!file) {
         alert("No file selected.");
+        return;
     }
+
+    if (!file.name.toLowerCase().endsWith(".json")) {
+        alert("Please select a valid JSON file.");
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            state.data = JSON.parse(e.target.result);
+            init();
+            renderNode(state.data, mainContainer, []);
+            bindNavigatorLinks();
+            updateStatus(`Loaded: ${file.name}`);
+        } catch (error) {
+            alert(`Invalid JSON: ${error.message}`);
+        }
+    };
+    reader.readAsText(file);
 });
 
-function show(object, container, path) {
-    if (typeof object === "string") {
-        const textinput = document.createElement('input');
-        const update_button = document.createElement('button');
-        textinput.type = "text";
-        textinput.value = object;
-        textinput.addEventListener("input", e => {
-            update_all_button.classList.add("wait");
-            update_button.classList.add("wait");
-        });
-        update_button.innerHTML = "update";
-        update_button.classList.add("styledButton");
-        update_button.addEventListener('click', update_data(update_button, path, textinput));
-        inputs.push(textinput);
-        buttons.push(update_button);
-        container.classList.add("v-box");
-        container.appendChild(textinput);
-        container.appendChild(update_button);
-        container.classList.add("textContainer");
-    }
-    else if (typeof object === "object") {
-        const sub_container = document.createElement("div");
-        container.appendChild(sub_container);
-        if (nav_location.hasOwnProperty(path)) {
-            const a = document.createElement('a');
-            a.textContent = nav_location[path];
-            quick_navigator.appendChild(a);
-            sub_container.id = nav_location[path];
-        }
-        show_object(object, sub_container, path);
-    }
+function pathToString(pathArray) {
+    return `.${pathArray.join(".")}`;
 }
 
-function show_object(object, container, path="") {
+function registerSection(pathArray, container) {
+    const sectionKey = pathToString(pathArray);
+    const sectionTitle = navLocation[sectionKey];
+    if (!sectionTitle) {
+        return;
+    }
+
+    const sectionId = `section-${sectionTitle.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+    container.id = sectionId;
+
+    const link = document.createElement("a");
+    link.href = `#${sectionId}`;
+    link.textContent = sectionTitle;
+    link.dataset.targetId = sectionId;
+    quickNavigator.appendChild(link);
+}
+
+function markPending(button) {
+    if (!button.classList.contains("wait")) {
+        state.changedCount += 1;
+    }
+    button.classList.add("wait");
+    updateAllButton.classList.add("wait");
+    updateStatus();
+}
+
+function createValueEditor(value, pathArray, container) {
+    if (typeof value === "string") {
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = value;
+
+        const button = document.createElement("button");
+        button.textContent = "Update";
+        button.className = "styledButton";
+
+        input.addEventListener("input", () => markPending(button));
+        button.addEventListener("click", applySingleUpdate(pathArray, input, button));
+
+        state.textInputs.push(input);
+        state.buttons.push(button);
+
+        container.classList.add("v-box", "textContainer");
+        container.appendChild(input);
+        container.appendChild(button);
+
+        const words = value.match(/[\p{L}\p{N}_]+/gu);
+        state.wordCount += words ? words.length : 0;
+        return 1;
+    }
+
+    if (value && typeof value === "object") {
+        const subContainer = document.createElement("div");
+        container.appendChild(subContainer);
+        registerSection(pathArray, subContainer);
+        return renderObject(value, subContainer, pathArray);
+    }
+
+    return 0;
+}
+
+function renderObject(object, container, pathArray) {
+    let total = 0;
+
     if (Array.isArray(object)) {
-        const sub_container = document.createElement('div');
-        container.appendChild(sub_container);
-        container.classList.add("objectContainer")
-        if (object.every(child => typeof child === "string")) {
+        container.classList.add("objectContainer");
+        const subContainer = document.createElement("div");
+        container.appendChild(subContainer);
+
+        if (object.every((child) => typeof child === "string")) {
             const textarea = document.createElement("textarea");
-            const update_button = document.createElement('button');
             textarea.value = object.join("\n");
-            textarea.rows = object.length;
-            update_button.innerHTML = "update";
-            update_button.classList.add("styledButton");
-            update_button.addEventListener('click', update_data(update_button, path, textarea, textarea.rows));
-            textarea.addEventListener("input", e => {
-                update_all_button.classList.add("wait");
-                update_button.classList.add("wait");
-                const lines = textarea.value.split('\n')
-                if (lines.length > textarea.rows) textarea.value = lines.slice(0, textarea.rows).join('\n');
+            textarea.rows = Math.max(2, object.length);
+
+            const button = document.createElement("button");
+            button.textContent = "Update";
+            button.className = "styledButton";
+
+            textarea.addEventListener("input", () => {
+                const lines = textarea.value.split("\n");
+                if (lines.length > object.length) {
+                    textarea.value = lines.slice(0, object.length).join("\n");
+                }
+                markPending(button);
             });
-            inputs.push(textarea);
-            buttons.push(update_button);
-            sub_container.classList.add("v-box-2");
-            sub_container.appendChild(textarea);
-            sub_container.appendChild(update_button);
+            button.addEventListener("click", applySingleUpdate(pathArray, textarea, button, object.length));
+
+            state.textInputs.push(textarea);
+            state.buttons.push(button);
+
+            subContainer.classList.add("v-box-2");
+            subContainer.appendChild(textarea);
+            subContainer.appendChild(button);
+
+            return object.length;
         }
-        else {
-            object.forEach((item, index) => {
-                show(item, sub_container, `${path}.${index}`);
-            });
-        }
-    }
-    else {
-        Object.keys(object).sort().forEach(key => {
-            if (object.hasOwnProperty(key)) {
-                const sub_container = document.createElement('div');
-                container.appendChild(sub_container);
-                container.classList.add("objectContainer")
-                sub_container.innerHTML = `<p>${key}: </p>`;
-                show(object[key], sub_container, `${path}.${key}`);
-            }            
+
+        object.forEach((item, index) => {
+            total += createValueEditor(item, [...pathArray, String(index)], subContainer);
         });
+        return total;
     }
+
+    Object.keys(object)
+        .sort()
+        .forEach((key) => {
+            if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                return;
+            }
+
+            const subContainer = document.createElement("div");
+            subContainer.classList.add("objectContainer");
+            container.appendChild(subContainer);
+
+            const label = document.createElement("span");
+            label.className = "sectionLabel";
+
+            const value = object[key];
+            if (value && typeof value === "object") {
+                label.textContent = `${key} (${Object.keys(value).length}): `;
+            } else {
+                label.textContent = `${key}: `;
+            }
+            subContainer.appendChild(label);
+
+            total += createValueEditor(value, [...pathArray, key], subContainer);
+        });
+
+    return total;
 }
 
-function update_data(button, path, input, limited) {
-    return () => {
-        if (data) {
-            let current = data;
-            const keys = path.split('.');
-            for (let i = 1; i < keys.length - 1; i++) current = current[keys[i]];
-            if (limited === undefined) {
-                current[keys[keys.length - 1]] = input.value;
-                button.classList.remove("wait");
-            }
-            else {
-                current = current[keys[keys.length - 1]];
-                let lines = input.value.split('\n').slice(0, limited);
-                for (let i = 0; i < limited; i++) {
-                    if (lines[i] === undefined) current[i] = "";
-                    else current[i] = lines[i];
-                }
-                button.classList.remove("wait");
-            }
-        }
+function renderNode(rootObject, container, pathArray) {
+    return createValueEditor(rootObject, pathArray, container);
+}
+
+function getRefByPath(pathArray) {
+    let current = state.data;
+    for (let i = 0; i < pathArray.length - 1; i++) {
+        current = current[pathArray[i]];
+    }
+    return {
+        parent: current,
+        key: pathArray[pathArray.length - 1]
     };
 }
 
+function applySingleUpdate(pathArray, input, button, lineLimit) {
+    return () => {
+        if (!state.data) {
+            return;
+        }
+
+        const { parent, key } = getRefByPath(pathArray);
+        if (lineLimit === undefined) {
+            parent[key] = input.value;
+        } else {
+            const lines = input.value.split("\n").slice(0, lineLimit);
+            for (let i = 0; i < lineLimit; i++) {
+                parent[key][i] = lines[i] ?? "";
+            }
+            input.value = parent[key].join("\n");
+        }
+
+        if (button.classList.contains("wait")) {
+            state.changedCount = Math.max(0, state.changedCount - 1);
+        }
+        button.classList.remove("wait");
+        if (state.changedCount === 0) {
+            updateAllButton.classList.remove("wait");
+        }
+        updateStatus();
+    };
+}
+
+function bindNavigatorLinks() {
+    quickNavigator.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const target = document.getElementById(link.dataset.targetId);
+            if (!target) {
+                return;
+            }
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            if (state.currentTarget) {
+                state.currentTarget.classList.remove("focus");
+            }
+            state.currentTarget = target;
+            target.classList.add("focus");
+        });
+    });
+}
+
+function downloadText(content, fileName, mimeType) {
+    const blob = new Blob([content], { type: mimeType });
+    const href = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = href;
+    anchor.download = fileName;
+    anchor.click();
+    URL.revokeObjectURL(href);
+}
+
 function save() {
-    const blob = new Blob([JSON.stringify(data, null, 2)])
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob, { type: "application/json" });
-    a.download = 'lang.json';
-    a.click();
+    if (!state.data) {
+        return;
+    }
+    downloadText(`${JSON.stringify(state.data, null, 2)}\n`, "lang.json", "application/json");
+}
+
+function escapeLuaString(value) {
+    return value
+        .replace(/\\/g, "\\\\")
+        .replace(/"/g, "\\\"")
+        .replace(/\n/g, "\\n")
+        .replace(/\r/g, "\\r")
+        .replace(/\t/g, "\\t");
+}
+
+function isLuaIdentifier(key) {
+    return /^[a-zA-Z_][a-zA-Z0-9_]*$/.test(key);
+}
+
+function convertToLua(object, depth = 0) {
+    const tab = "\t";
+
+    if (typeof object === "string") {
+        return `"${escapeLuaString(object)}"`;
+    }
+    if (typeof object === "number" || typeof object === "boolean") {
+        return String(object);
+    }
+    if (object === null) {
+        return "nil";
+    }
+    if (!object || typeof object !== "object") {
+        return "nil";
+    }
+
+    const indent = tab.repeat(depth + 1);
+    const closeIndent = tab.repeat(depth);
+    const lines = [];
+
+    if (Array.isArray(object)) {
+        object.forEach((item) => {
+            lines.push(`${indent}${convertToLua(item, depth + 1)},`);
+        });
+    } else {
+        Object.keys(object)
+            .sort()
+            .forEach((key) => {
+                const luaKey = isLuaIdentifier(key) ? key : `["${escapeLuaString(key)}"]`;
+                lines.push(`${indent}${luaKey} = ${convertToLua(object[key], depth + 1)},`);
+            });
+    }
+
+    return `{\n${lines.join("\n")}\n${closeIndent}}`;
 }
 
 function saveAsLua() {
-    function convertToLua(object, tab_count=0) {
-        let result = "";
-        if (typeof object === "string") result = `"${object}"`.replace(/\\/g, "\\\\");
-        else {
-            result = "{\n";
-            const tab = "\t";
-            tab_count += 1;
-            if (Array.isArray(object)) {
-                object.forEach(item => {
-                    result += tab.repeat(tab_count) + convertToLua(item, tab_count) + ",\n";
-                });
-            }
-            else if (typeof object === "object" && object != null) {
-                Object.keys(object).sort().forEach(key => {
-                    if (object.hasOwnProperty(key)) {
-                        item = object[key];
-                        let actual_key = key;
-                        if (!/^[a-zA-Z_][a-zA-Z0-9_]*$/.test(actual_key)) {
-                            actual_key = `["${key}"]`;
-                        }
-                        result += tab.repeat(tab_count) + `${actual_key}=${convertToLua(item, tab_count)},\n`;
-                    }
-                });
-            }
-            tab_count -= 1;
-            result += tab.repeat(tab_count) + "}";
-        }
-        return result;
+    if (!state.data) {
+        return;
     }
-    const blob = new Blob([`return ${convertToLua(data)}\n`])
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob, { type: "text/plain" });
-    a.download = 'lang.lua';
-    a.click();
+    downloadText(`return ${convertToLua(state.data)}\n`, "lang.lua", "text/plain");
 }
 
 function updateAll() {
-    buttons.forEach(button => button.click());
-    update_all_button.classList.remove("wait");
+    state.buttons.forEach((button) => button.click());
+    updateAllButton.classList.remove("wait");
+    updateStatus("All visible fields synchronized.");
 }
 
 function replace() {
-    const find_text = document.getElementById("findText").value;
-    const replace_text = document.getElementById("replaceText").value;
-    const use_reg_expr = document.getElementById("useRegExp").checked;
-    inputs.forEach((input) => {
-        if (!use_reg_expr) {
-            input.value = input.value.split(find_text).join(replace_text);
+    if (!state.data) {
+        return;
+    }
+
+    const findText = document.getElementById("findText").value;
+    const replaceText = document.getElementById("replaceText").value;
+    const useRegExp = document.getElementById("useRegExp").checked;
+
+    if (!findText) {
+        alert("Find field is empty.");
+        return;
+    }
+
+    let replacements = 0;
+    for (const input of state.textInputs) {
+        const before = input.value;
+        let after = before;
+
+        if (!useRegExp) {
+            after = before.split(findText).join(replaceText);
+        } else {
+            try {
+                const regex = new RegExp(findText, "g");
+                after = before.replace(regex, replaceText);
+            } catch (error) {
+                alert(`Invalid RegExp: ${error.message}`);
+                return;
+            }
         }
-        else {
-            const regex = new RegExp(find_text, 'g');
-            input.value = input.value.replace(regex, replace_text);
+
+        if (after !== before) {
+            input.value = after;
+            input.dispatchEvent(new Event("input"));
+            replacements += 1;
         }
-    });
-    update_all_button.click();
+    }
+
+    if (replacements === 0) {
+        updateStatus("No matches.");
+        return;
+    }
+
+    updateAll();
+    updateStatus(`Replaced ${replacements} field(s).`);
 }
