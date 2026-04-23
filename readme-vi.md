@@ -1,75 +1,100 @@
-# Việt Hoá cho Balatro
+# Việt hoá Balatro
 
 ![Demo](images/demo.png)
 
-![Hoàn Thiện](https://img.shields.io/badge/HoànThiện-80%25-blue)
+![Tiến độ](https://img.shields.io/badge/Tiến%20độ-80%25-blue)
 
-Hướng dẫn này chỉ cách thêm ngôn ngữ Tiếng Việt vào trò chơi **[Balatro](https://www.playbalatro.com/)** *tự dịch :v*
-(Quay lại bản tiếng anh ở [đây](readme.md))
+Đây là bản Việt hoá không chính thức cho [Balatro](https://www.playbalatro.com/), gồm:
+1. Font tiếng Việt cho game.
+2. File dịch tiếng Việt.
+3. Script tự động chép file, vá `game.lua`, và build lại `Balatro.love`.
+4. Công cụ web để chỉnh bản dịch JSON/Lua.
+
+Bản tiếng Anh: xem tại [readme.md](readme.md).
+
+## Cấu trúc thư mục
+1. `current/vi.lua`: bản dịch đang dùng để deploy.
+2. `fonts/m6x11plus_vi.ttf`: font đã thêm glyph tiếng Việt.
+3. `commands/`: script tự động extract, copy, patch, rebuild.
+4. `tools/`: công cụ chuyển đổi Lua/JSON và trình sửa trên web.
 
 ## Yêu cầu
-Đối với người dùng Windows, bạn cần có **7-Zip** (Mình đã thử với **WinRAR** và có bước không làm được)
+1. Đã cài Balatro trên máy.
+2. Có `zip` và `unzip` trong terminal.
+3. Windows: khuyến nghị dùng 7-Zip để mở file game.
 
-## Tìm Mã Nguồn Balatro
-Tìm mã nguồn cho game chạy trên **LÖVE** khá là đơn giản. **LÖVE** lưu game như 1 file nén.
-- **Windows**: 
-  - Tìm vị trí file `Balatro.exe` [^1]
-  - Chuột phải vào `Balatro.exe`
-  - (Nếu là Win 11) Chọn **Show more options**
-  - Chọn **7-Zip>Open archive**
-- **MacOS**: 
-  - Tìm vị trí file `Balatro` [^1]
-  - Chuột phải vào `Balatro`
-  - Chọn **Show Package Contents**
-  - Vào thư mục `Contents/Resources/`
-  - Chuột phải vào `Balatro.love`
-  - Chọn **Open With>Archive Utility** để giải nén nó (hoặc chỉ cần nhấn đúp vào)
-  - Mở thư mục **Balatro**
-- **Linux**: \*Sẽ cập nhật sau\*
+## Tìm thư mục Resources của Balatro
+1. macOS:
+   - Mở package của app Balatro.
+   - Vào `Contents/Resources/`.
+   - Trong đó có `Balatro.love`.
+2. Windows:
+   - Tìm `Balatro.exe`.
+   - Mở bằng 7-Zip.
+3. Linux:
+   - Tìm thư mục cài game và file `Balatro.love` tương tự.
 
-## Thêm Tiếng Việt
+## Cách nhanh nhất (khuyên dùng)
+Từ thư mục gốc repo:
 
-### Thêm Phông Chữ
-Phông chữ mặc định của game khá là hợp nên mình không muốn thay thế nó. Mình vẽ thêm mấy ký tự tiếng việt và lưu lại ở [đây](./fonts/m6x11plus_vi.ttf). Tải file đó và để nó vào **/resources/fonts/**.
+```bash
+cd commands
+./shortcut.sh -z -f -l -b
+```
 
-### Thêm Bản Dịch
+Lệnh trên sẽ tự làm toàn bộ:
+1. Giải nén `Balatro.love` vào `Resources/Balatro`.
+2. Chép font tiếng Việt vào `resources/fonts/`.
+3. Chép bản dịch vào `localization/vi.lua`.
+4. Vá `game.lua` (thêm mục `vi` trong `self.LANGUAGES` và font trong `self.FONTS` nếu chưa có).
+5. Build lại `Balatro.love`.
 
-Bản dịch việt hoá mình dịch lại ở [đây](./current/vi.lua). Tải file đó và để nó vào **/localization/**.
+### Tuỳ chọn script
 
-Để bản dịch được hiển thị trong game, bạn hãy chỉnh sử file `game.lua` như sau:
-- Tìm khai báo biến `self.LANGUAGES` (đâu đó dòng 942).
-- Chèn thêm đoạn mã sau vào cuối khai báo biến đó (đâu đó dòng 959):
-    ```lua
-    ['vi'] = {font = 10, label = "Tiếng Việt", key = 'vi', beta = true, button = "Phản hồi ngôn ngữ", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},
-    ```
-    Sau khi chèn xong thì nó nhìn giống giống vầy
-    ```lua
-        ['all2'] = {font = 9, label = "English", key = 'all', omit = true},
-        ['vi'] = {font = 10, label = "Tiếng Việt", key = 'vi', beta = true, button = "Phản hồi ngôn ngữ", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},
-    }
-    ```
-- Tìm tiếp khai báo biến `self.FONTS` (đâu đó dòng 969).
-- Chèn thêm đoạn mã sau vào cuối khai báo biến đó (đâu đó dòng 978):
-    ```lua
-    {file = "resources/fonts/m6x11plus_vi.ttf", render_scale = self.TILESIZE*10, TEXT_HEIGHT_SCALE = 0.9, TEXT_OFFSET = {x=10,y=-20}, FONTSCALE = 0.1, squish = 1, DESCSCALE = 1},
-    ```
-    Sau khi chèn xong thì nó nhìn giống giống vầy
-    ```lua
-        {file = "resources/fonts/GoNotoCJKCore.ttf", render_scale = self.TILESIZE*10, TEXT_HEIGHT_SCALE = 0.8, TEXT_OFFSET = {x=10,y=-20}, FONTSCALE = 0.1, squish = 1, DESCSCALE = 1},
-        {file = "resources/fonts/m6x11plus_vi.ttf", render_scale = self.TILESIZE*10, TEXT_HEIGHT_SCALE = 0.9, TEXT_OFFSET = {x=10,y=-20}, FONTSCALE = 0.1, squish = 1, DESCSCALE = 1},
-    }
-    ```
-- Lưu lại
-- (Windows) 7-Zip sẽ hỏi có muốn update lại file nén này không thì bạn bấm Yes
-- (MacOS) Bạn cần phải cập nhật `Balatro.love` thay chỉ vì `Balatro`, cập nhật như sau
-  - Quay lại thư mục `Resource` (Thư mục chứa `Balatro`)
-  - Chuột phải vào `Balatro`
-  - Chọn `New Terminal at Folder`
-  - Thực thi lệnh sau: 
-      ```bash
-      zip -r9 ../Balatro.love .
-      ```
+```bash
+./shortcut.sh [-z] [-f] [-l] [-b] [-p <đường_dẫn_resources>]
+```
 
-## That's all
+1. `-z`: giải nén lại từ `Balatro.love`.
+2. `-f`: chép font tiếng Việt.
+3. `-l`: chép file dịch.
+4. `-b`: vá `game.lua` và build lại `Balatro.love`.
+5. `-p`: chỉ định thủ công đường dẫn thư mục `Resources`.
 
-[^1]: Người dùng Steam có thể vào Library, tìm Balatro, chuột phải và chọn `Manage>Browse Local Files`
+Ví dụ dùng đường dẫn custom:
+
+```bash
+./shortcut.sh -p "/path/to/Balatro.app/Contents/Resources" -z -f -l -b
+```
+
+## Cách thủ công
+Nếu không dùng script:
+1. Chép `fonts/m6x11plus_vi.ttf` vào `resources/fonts/`.
+2. Chép `current/vi.lua` thành `localization/vi.lua`.
+3. Sửa `game.lua`:
+   - Thêm mục `vi` trong `self.LANGUAGES`.
+   - Thêm font `m6x11plus_vi.ttf` trong `self.FONTS`.
+4. Nén lại thành `Balatro.love`.
+
+## Công cụ web chỉnh bản dịch
+File `tools/index.html` là trình chỉnh JSON trực quan.
+
+### Cách dùng
+1. Mở `tools/index.html` bằng trình duyệt.
+2. Tải file JSON bản dịch lên.
+3. Chỉnh sửa, tìm/thay thế, rồi xuất JSON hoặc Lua.
+
+## Chuyển Lua sang JSON
+Chạy trong thư mục `tools/`:
+
+```bash
+lua lua_to_json.lua ../lang.lua output.json
+```
+
+Nếu không truyền tham số:
+1. Input mặc định: `../lang.lua`
+2. Output mặc định: `output.json`
+
+## Lưu ý
+1. Đây là dự án cộng đồng, không phải bản chính thức.
+2. Nên backup file gốc trước khi patch.
